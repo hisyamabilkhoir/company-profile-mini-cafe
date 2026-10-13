@@ -6,10 +6,10 @@
   <title>ABYNS STUDIO — Where Every Sip Feels Like Heaven</title>
   <meta name="description" content="A cozy sanctuary cafe for dreamers, handcrafted specialty coffee, artisan pastries, and brighter days at ABYNS Studio.">
 
-  <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans, & Italianno -->
+  <!-- Google Fonts: Cormorant Garamond, Alex Brush, Plus Jakarta Sans, & Italianno -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Italianno&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Italianno&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
@@ -143,20 +143,36 @@
        SIGNATURE MENU SECTION - REDESIGNED
        ========================================================================== -->
   <section class="signature-section" id="signature">
-    <div class="sig-bg-sparkle sig-sparkle-tl">✦</div>
-    <div class="sig-bg-sparkle sig-sparkle-tr">✦</div>
-    <div class="sig-bg-sparkle sig-sparkle-bl">✦</div>
+    <!-- Real 4-Point Star Vector Sparkles -->
+    <svg class="sig-bg-sparkle sig-sparkle-tl" viewBox="0 0 100 100" fill="none">
+      <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z" fill="#D4AF37"/>
+    </svg>
+    <svg class="sig-bg-sparkle sig-sparkle-tr" viewBox="0 0 100 100" fill="none">
+      <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z" fill="#D4AF37"/>
+    </svg>
+    <svg class="sig-bg-sparkle sig-sparkle-bl" viewBox="0 0 100 100" fill="none">
+      <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z" fill="#D4AF37"/>
+    </svg>
     
     <div class="container">
       <div class="section-header signature-header">
         <div class="signature-top-tag">
           <span class="tag-divider-line"></span>
-          <span class="tag-text">✦ OUR SIGNATURE ✦</span>
+          <svg class="tag-star-svg" width="9" height="9" viewBox="0 0 100 100" fill="#B58D5A">
+            <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/>
+          </svg>
+          <span class="tag-text">OUR SIGNATURE</span>
+          <svg class="tag-star-svg" width="9" height="9" viewBox="0 0 100 100" fill="#B58D5A">
+            <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/>
+          </svg>
           <span class="tag-divider-line"></span>
         </div>
 
         <h2 class="signature-main-title">
-          Signature <span class="title-italic">Menu</span><span class="sparkle-gold">✦</span>
+          Signature <span class="title-italic">Menu</span>
+          <svg class="title-star-svg" width="20" height="20" viewBox="0 0 100 100" fill="#D4AF37">
+            <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/>
+          </svg>
         </h2>
 
         <p class="section-subtitle">Handcrafted favorites, made to bring a little more magic to your day.</p>
@@ -164,7 +180,10 @@
         <div class="signature-view-all-wrap">
           <a href="#menu" class="btn-sig-view-all">
             <span>View All Menu</span>
-            <span class="arrow-symbol">→</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
           </a>
         </div>
       </div>

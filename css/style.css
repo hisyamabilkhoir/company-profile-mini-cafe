@@ -679,58 +679,67 @@ input, textarea, select {
   overflow: hidden;
 }
 
-/* Background Sparkles */
+/* Background Sparkles (Pure Vector SVG) */
 .sig-bg-sparkle {
   position: absolute;
-  color: #D4AF37;
-  opacity: 0.35;
-  font-size: 1.4rem;
+  width: 32px;
+  height: 32px;
+  opacity: 0.38;
   pointer-events: none;
   user-select: none;
+  z-index: 0;
 }
 
 .sig-sparkle-tl {
-  top: 40px;
-  left: 5%;
-  font-size: 2rem;
+  top: 45px;
+  left: 4%;
+  width: 44px;
+  height: 44px;
 }
 
 .sig-sparkle-tr {
-  top: 70px;
-  right: 6%;
-  font-size: 1.6rem;
+  top: 65px;
+  right: 5%;
+  width: 34px;
+  height: 34px;
 }
 
 .sig-sparkle-bl {
-  bottom: 50px;
-  left: 4%;
-  font-size: 1.8rem;
+  bottom: 60px;
+  left: 3%;
+  width: 40px;
+  height: 40px;
 }
 
 .signature-header {
   text-align: center;
   margin-bottom: 54px;
   position: relative;
+  z-index: 1;
 }
 
 .signature-top-tag {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 10px;
   margin-bottom: 12px;
 }
 
+.tag-star-svg {
+  opacity: 0.85;
+}
+
 .tag-divider-line {
-  width: 44px;
+  width: 38px;
   height: 1px;
   background: var(--accent-gold);
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
 .signature-top-tag .tag-text {
   font-size: 0.76rem;
-  letter-spacing: 0.26em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--accent-gold-dark);
   font-weight: 600;
@@ -738,11 +747,15 @@ input, textarea, select {
 
 .signature-main-title {
   font-family: var(--font-serif);
-  font-size: clamp(2.6rem, 4.2vw, 3.5rem);
+  font-size: clamp(2.6rem, 4.4vw, 3.6rem);
   font-weight: 500;
   color: var(--accent-espresso);
   line-height: 1.15;
   margin-bottom: 14px;
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
 }
 
 .signature-main-title .title-italic {
@@ -751,11 +764,10 @@ input, textarea, select {
   font-family: var(--font-serif);
 }
 
-.sparkle-gold {
-  color: #D4AF37;
-  font-size: 0.6em;
-  vertical-align: super;
-  margin-left: 4px;
+.title-star-svg {
+  position: relative;
+  top: -12px;
+  margin-left: 2px;
 }
 
 .signature-view-all-wrap {
@@ -790,32 +802,34 @@ input, textarea, select {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 22px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Luxury Signature Card */
 .sig-card-luxury {
   background: #FFFFFF;
-  border: 1px solid rgba(226, 212, 192, 0.55);
-  border-radius: 22px;
+  border: 1px solid rgba(220, 202, 178, 0.65);
+  border-radius: 26px;
   padding: 13px;
   display: flex;
   flex-direction: column;
   position: relative;
-  box-shadow: 0 10px 28px rgba(68, 45, 28, 0.06);
+  box-shadow: 0 14px 35px rgba(180, 150, 115, 0.12), 0 2px 8px rgba(0, 0, 0, 0.02);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
   overflow: hidden;
 }
 
 .sig-card-luxury:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(68, 45, 28, 0.12);
+  box-shadow: 0 20px 45px rgba(180, 150, 115, 0.22);
   border-color: var(--accent-gold);
 }
 
 .sig-card-media {
   width: 100%;
   aspect-ratio: 1 / 1;
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
   position: relative;
   background: #FAF6F0;
@@ -829,58 +843,71 @@ input, textarea, select {
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.sig-card-media::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 55%;
+  background: radial-gradient(ellipse at 50% 0%, rgba(181, 141, 90, 0.3) 0%, transparent 80%);
+  pointer-events: none;
+  z-index: 1;
+}
+
 .sig-card-luxury:hover .sig-card-media img {
   transform: scale(1.06);
 }
 
-/* Top-Left Badge */
+/* Top-Left Vector Badge */
 .sig-badge-pill {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 11px;
+  left: 11px;
   z-index: 2;
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  padding: 5px 11px;
+  padding: 5px 12px;
   border-radius: var(--radius-full);
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.85);
+  gap: 6px;
+  box-shadow: 0 2px 10px rgba(68, 45, 28, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
-.badge-icon {
-  font-size: 0.72rem;
+.badge-icon-svg {
+  display: flex;
+  align-items: center;
 }
 
 .badge-text {
   font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent-espresso);
+  color: #4A3525;
 }
 
 /* Top-Right Heart Button */
 .sig-heart-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 11px;
+  right: 11px;
   z-index: 2;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent-espresso);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  color: #4A3525;
+  box-shadow: 0 2px 10px rgba(68, 45, 28, 0.08);
   cursor: pointer;
   transition: all var(--transition-fast);
 }
@@ -895,19 +922,48 @@ input, textarea, select {
   color: #c25e5e;
 }
 
-/* Cursive Script Watermark Accent */
+/* Handwritten Script Accent on Photo */
 .sig-script-watermark {
-  position: absolute;
-  bottom: 10px;
-  right: 12px;
-  z-index: 2;
-  font-family: var(--font-script);
-  font-size: 2.1rem;
+  font-family: 'Alex Brush', cursive;
+  font-size: 2.2rem;
   line-height: 1;
   color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 2px 8px rgba(44, 30, 20, 0.7);
+  text-shadow: 0 2px 10px rgba(44, 30, 20, 0.5);
   pointer-events: none;
   user-select: none;
+  white-space: nowrap;
+}
+
+.script-cloud-latte {
+  position: absolute;
+  top: 48%;
+  right: 14px;
+  transform: translateY(-50%) rotate(4deg);
+  z-index: 2;
+}
+
+.script-heavenly-matcha {
+  position: absolute;
+  top: 42%;
+  right: 12px;
+  transform: translateY(-50%) rotate(-3deg);
+  z-index: 2;
+}
+
+.script-angels-berry {
+  position: absolute;
+  top: 45%;
+  right: 14px;
+  transform: translateY(-50%) rotate(5deg);
+  z-index: 2;
+}
+
+.script-moon-croissant {
+  position: absolute;
+  top: 24%;
+  left: 18%;
+  transform: rotate(-6deg);
+  z-index: 2;
 }
 
 /* Card Body Info */
@@ -916,6 +972,8 @@ input, textarea, select {
   flex-direction: column;
   flex-grow: 1;
   padding: 12px 4px 4px;
+  position: relative;
+  z-index: 1;
 }
 
 .sig-title-price-row {
@@ -980,16 +1038,16 @@ input, textarea, select {
 }
 
 .btn-sig-view-details {
-  background: #FAF6F0;
-  border: 1px solid rgba(197, 168, 128, 0.4);
+  background: #FAF7F2;
+  border: 1px solid rgba(200, 180, 155, 0.45);
   border-radius: var(--radius-full);
   padding: 8px 18px;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: var(--accent-espresso);
+  color: #3E2B1E;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   cursor: pointer;
   transition: all var(--transition-fast);
 }
@@ -1005,23 +1063,32 @@ input, textarea, select {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #B58D5A, #8C6239);
-  color: #ffffff;
-  font-size: 1.3rem;
-  font-weight: 500;
-  line-height: 1;
+  background: linear-gradient(135deg, #B89366 0%, #8A643E 100%);
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(140, 98, 57, 0.35);
+  box-shadow: 0 4px 14px rgba(138, 100, 62, 0.35);
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-sig-quick-add:hover {
   transform: scale(1.12);
-  box-shadow: 0 6px 18px rgba(140, 98, 57, 0.5);
+  box-shadow: 0 6px 18px rgba(138, 100, 62, 0.5);
   background: linear-gradient(135deg, #C29A67, #9B6E43);
+}
+
+/* Botanical Line Art Sketch Watermark */
+.sig-card-watermark {
+  position: absolute;
+  bottom: -6px;
+  right: -4px;
+  width: 86px;
+  height: 86px;
+  pointer-events: none;
+  opacity: 0.35;
+  z-index: 0;
 }
 
 /* ==========================================================================

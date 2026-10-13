@@ -232,8 +232,22 @@ function initHeroVideo() {
 }
 
 /* ==========================================================================
-   SIGNATURE MENU - REDESIGNED
+   SIGNATURE MENU - REDESIGNED WITH REAL SVG ICONS
    ========================================================================== */
+const SIG_BADGE_ICONS = {
+  "cloud-latte": `<svg width="12" height="12" viewBox="0 0 24 24" fill="#B58D5A"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>`,
+  "heavenly-matcha": `<svg width="11" height="11" viewBox="0 0 24 24" fill="#B58D5A"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>`,
+  "angels-berry": `<svg width="11" height="11" viewBox="0 0 24 24" fill="#B58D5A"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.75C6.2 7.6 4.8 9.5 4 11.5c1.8-1.5 5.5-2.5 13-3.5z"/></svg>`,
+  "moon-croissant": `<svg width="11" height="11" viewBox="0 0 100 100" fill="#B58D5A"><path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/></svg>`
+};
+
+const SIG_WATERMARKS = {
+  "cloud-latte": `<svg class="sig-card-watermark" viewBox="0 0 100 100" fill="none" stroke="#C5A880" stroke-width="1.3"><path d="M90 90 C70 80 50 75 40 50 C55 52 70 48 80 40 C75 55 65 65 90 90 Z M40 50 C35 40 38 25 50 15 C45 28 35 38 40 50 Z"/></svg>`,
+  "heavenly-matcha": `<svg class="sig-card-watermark" viewBox="0 0 100 100" fill="none" stroke="#C5A880" stroke-width="1.3"><path d="M85 85 C65 75 55 60 50 40 C60 42 75 35 80 25 C75 40 65 50 85 85 Z M50 40 C40 35 30 40 20 50 C32 48 42 42 50 40 Z"/></svg>`,
+  "angels-berry": `<svg class="sig-card-watermark" viewBox="0 0 100 100" fill="none" stroke="#C5A880" stroke-width="1.3"><path d="M95 95 C75 85 60 70 55 45 C68 48 80 40 85 30 C80 45 70 55 95 95 Z M55 45 C45 35 42 20 50 10 C46 22 40 32 55 45 Z"/></svg>`,
+  "moon-croissant": `<svg class="sig-card-watermark" viewBox="0 0 100 100" fill="none" stroke="#C5A880" stroke-width="1.3"><path d="M25 75 C35 55 55 45 80 55 C70 68 55 75 42 76 Z M38 58 C48 48 60 48 70 55 M46 48 C55 42 62 44 68 48"/></svg>`
+};
+
 function renderSignatureMenu() {
   const container = document.getElementById("signatureMenuGrid");
   if (!container) return;
@@ -241,25 +255,25 @@ function renderSignatureMenu() {
   const signatures = MENU_ITEMS.slice(0, 4);
 
   container.innerHTML = signatures.map(item => `
-    <div class="sig-card-luxury" data-id="${item.id}">
+    <div class="sig-card-luxury sig-card-${item.id}" data-id="${item.id}">
       <div class="sig-card-media" onclick="selectPreviewItem('${item.id}')">
         <img src="${item.image}" alt="${item.name}" loading="lazy">
         
-        <!-- Top Badge -->
+        <!-- Top Vector Badge -->
         <div class="sig-badge-pill">
-          <span class="badge-icon">${item.badgeIcon || '✦'}</span>
+          <span class="badge-icon-svg">${SIG_BADGE_ICONS[item.id] || ''}</span>
           <span class="badge-text">${item.badge || 'SIGNATURE'}</span>
         </div>
 
-        <!-- Wishlist / Heart Button -->
+        <!-- Wishlist / Heart Button with SVG -->
         <button class="sig-heart-btn" onclick="toggleWishlist(event, '${item.id}')" title="Sukai menu ini" aria-label="Favorite">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5C4533" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
           </svg>
         </button>
 
-        <!-- Script Overlay Watermark -->
-        ${item.scriptAccent ? `<div class="sig-script-watermark">${item.scriptAccent}</div>` : ''}
+        <!-- Delicate Handwritten Script on Photo -->
+        ${item.scriptAccent ? `<div class="sig-script-watermark script-${item.id}">${item.scriptAccent}</div>` : ''}
       </div>
 
       <div class="sig-card-info">
@@ -276,13 +290,23 @@ function renderSignatureMenu() {
         <div class="sig-card-bottom-actions">
           <button class="btn-sig-view-details" onclick="selectPreviewItem('${item.id}'); document.getElementById('menu')?.scrollIntoView({behavior:'smooth'});">
             <span>View Details</span>
-            <span>→</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
           </button>
-          <button class="btn-sig-quick-add" onclick="event.stopPropagation(); addToCartDirect('${item.id}')" title="Tambah ke keranjang">
-            +
+          
+          <button class="btn-sig-quick-add" onclick="event.stopPropagation(); addToCartDirect('${item.id}')" title="Tambah ke keranjang" aria-label="Tambah">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
           </button>
         </div>
       </div>
+
+      <!-- Botanical Line Art Sketch Watermark -->
+      ${SIG_WATERMARKS[item.id] || ''}
     </div>
   `).join("");
 }
