@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABYNS STUDIO — Where Every Sip Feels Like Heaven</title>
+  <meta name="description" content="A cozy sanctuary cafe for dreamers, handcrafted specialty coffee, artisan pastries, and brighter days at ABYNS Studio.">
+
+  <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans, & Italianno -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Italianno&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrapper">
+      <a href="#home" class="brand-logo">
+        <span class="brand-title">ABYNS</span>
+        <span class="brand-subtitle">STUDIO</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#signature" class="nav-link">Signature</a></li>
+          <li><a href="#menu" class="nav-link">Menu</a></li>
+          <li><a href="#story" class="nav-link">Our Story</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li><a href="#location" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="cart-toggle-btn open-cart-btn" aria-label="Keranjang Belanja" title="Lihat Keranjang">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cartCountBadge">0</span>
+        </button>
+
+        <a href="#location" class="btn btn-primary">
+          <span>Visit Us</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <button class="mobile-menu-toggle" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO BANNER (WITH AUTOPLAYING VIDEO)
+       ========================================================================== -->
+  <section class="hero-section" id="home">
+    <div class="hero-video-container">
+      <video class="hero-video" id="heroVideo" autoplay loop muted playsinline preload="auto">
+        <source src="assets/videos/hero-banner.mp4" type="video/mp4">
+        Browser Anda tidak mendukung tag video.
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span>✨ A Little Moment of Magic</span>
+      </div>
+
+      <h1 class="hero-title">
+        Where Every Sip<br>
+        <span>Feels Like Heaven.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        A cozy cafe for dreamers, good coffee, and brighter days. Nikmati sentuhan rasa lembut dengan racikan barista terbaik kami.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#menu" class="btn btn-primary">
+          <span>Explore Our Menu</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <a href="#story" class="btn btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          <span>Watch Our Story</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-controls">
+      <div class="scroll-indicator">
+        <div class="scroll-line"></div>
+        <span>Scroll Down</span>
+      </div>
+
+      <div style="display:flex; gap:10px;">
+        <button class="video-control-pill" id="videoToggleBtn" title="Jeda / Putar Video">
+          <span>⏸</span> Jeda Video
+        </button>
+        <button class="video-control-pill" id="videoMuteBtn" title="Suara Video">
+          <span>🔇</span> Suara Mati
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PROMO TICKER / BANNER
+       ========================================================================== -->
+  <div class="promo-ticker">
+    <div class="container">
+      <div class="promo-ticker-content">
+        <span>✨ Gunakan kode promo:</span>
+        <button class="promo-code-tag" onclick="applyPresetPromo('HEAVEN15')" title="Klik untuk pasang voucher">
+          HEAVEN15 (Diskon 15%)
+        </button>
+        <span style="opacity:0.5">•</span>
+        <span>Diskon Otomatis 10% untuk pesanan di atas Rp 100.000! ☕</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SIGNATURE MENU SECTION
+       ========================================================================== -->
+  <section class="signature-section" id="signature">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">— Our Signature —</span>
+        <h2 class="section-title">Signature Menu ✦</h2>
+        <p class="section-subtitle">Handcrafted favorites, made to bring a little more magic to your day.</p>
+        <div style="margin-top: 16px;">
+          <a href="#menu" class="btn-link">
+            <span>View All Menu</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="signature-grid" id="signatureMenuGrid">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       OUR STORY SECTION
+       ========================================================================== -->
+  <section class="story-section" id="story">
+    <div class="container">
+      <div class="story-wrapper">
+        <div class="story-visual">
+          <div class="story-arch-frame">
+            <img src="assets/images/story-interior.jpg" alt="ABYNS Studio Cafe Interior" loading="lazy">
+          </div>
+          <div class="story-floating-card">
+            <div class="floating-script">Good Coffee, Brighter Days.</div>
+            <div class="floating-sub">ABYNS STUDIO SANCTUARY</div>
+          </div>
+        </div>
+
+        <div class="story-content">
+          <span class="section-tag">— Our Story —</span>
+          <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">
+            A Little Escape<br>from the Ordinary
+          </h2>
+          <p class="story-paragraph">
+            ABYNS Studio hadir sebagai ruang kecil untuk beristirahat, bercerita, dan menikmati momen sederhana yang terasa istimewa. Terinspirasi dari langit yang tenang, setiap menu kami dibuat dengan bahan pilihan dan penuh perhatian.
+          </p>
+
+          <div class="story-features">
+            <div class="feature-item">
+              <span class="feature-number">100%</span>
+              <span class="feature-label">Arabica Specialty</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-number">24+</span>
+              <span class="feature-label">Artisan Menus</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-number">4.9★</span>
+              <span class="feature-label">Guest Rating</span>
+            </div>
+          </div>
+
+          <a href="#menu" class="btn btn-primary">
+            <span>Know Our Story</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       DISCOVER MORE / FULL MENU SECTION
+       ========================================================================== -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">— Discover More —</span>
+        <h2 class="section-title">Our Menu</h2>
+        <p class="section-subtitle">Made with quality ingredients, crafted with love.</p>
+      </div>
+
+      <!-- Filters & Live Search -->
+      <div class="menu-filter-bar">
+        <div class="filter-pills">
+          <button class="filter-btn active" data-category="all">All</button>
+          <button class="filter-btn" data-category="coffee">Coffee</button>
+          <button class="filter-btn" data-category="non-coffee">Non-Coffee</button>
+          <button class="filter-btn" data-category="tea">Tea</button>
+          <button class="filter-btn" data-category="pastry">Pastry</button>
+        </div>
+
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" class="search-input" id="menuSearchInput" placeholder="Cari menu favoritmu...">
+        </div>
+      </div>
+
+      <!-- Split Layout: Grid on Left, Live Detail Preview on Right -->
+      <div class="menu-layout">
+        <div class="menu-grid" id="menuGrid">
+          <!-- Injected via JavaScript -->
+        </div>
+
+        <aside class="menu-preview-panel" id="menuPreviewPanel">
+          <!-- Injected via JavaScript -->
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       GALLERY SECTION
+       ========================================================================== -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">— Our Gallery —</span>
+        <h2 class="section-title">Moments at ABYNS ✦</h2>
+        <p class="section-subtitle">A glimpse of our space, our coffee, and the little details that make it special.</p>
+        <div style="margin-top: 16px;">
+          <a href="#gallery" class="btn-link">
+            <span>View Gallery</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="assets/images/gallery-1.jpg" alt="Cafe Moment 1" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery-2.jpg" alt="Cafe Moment 2" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery-3.jpg" alt="Cafe Moment 3" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery-4.jpg" alt="Cafe Moment 4" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery-5.jpg" alt="Cafe Moment 5" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery-6.jpg" alt="Cafe Moment 6" loading="lazy">
+          <div class="gallery-overlay-more">
+            <span class="plus">+12</span>
+            <span class="label">More Photos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       REVIEWS / TESTIMONIALS SECTION
+       ========================================================================== -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">— Kind Words From Our Guests —</span>
+        <h2 class="section-title">Little Moments, Lovely Memories.</h2>
+      </div>
+
+      <div class="reviews-nav">
+        <button class="review-nav-btn" id="prevReviewBtn" aria-label="Previous Review">←</button>
+        <button class="review-nav-btn" id="nextReviewBtn" aria-label="Next Review">→</button>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">"Tempatnya super cozy, kopinya enak banget dan suasananya bikin betah! Cloud Latte-nya beneran lembut di tenggorokan."</p>
+          <div class="review-author">
+            <div class="author-avatar">
+              <img src="assets/images/avatar-1.jpg" alt="Citra A.">
+            </div>
+            <div>
+              <div class="author-name">Citra A.</div>
+              <div class="author-role">Coffee Enthusiast</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">"Menu di sini unik dan rasanya benar-benar special. Definitely will come back! Pelayanannya ramah dan estetik banget buat foto."</p>
+          <div class="review-author">
+            <div class="author-avatar">
+              <img src="assets/images/avatar-2.jpg" alt="Ricky M.">
+            </div>
+            <div>
+              <div class="author-name">Ricky M.</div>
+              <div class="author-role">Creative Director</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">"Suka banget sama ambience-nya, serasa lagi di tempat yang tenang. Moon croissant-nya renyah dan cream-nya pas!"</p>
+          <div class="review-author">
+            <div class="author-avatar">
+              <img src="assets/images/avatar-3.jpg" alt="Nadya S.">
+            </div>
+            <div>
+              <div class="author-name">Nadya S.</div>
+              <div class="author-role">Food Blogger</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       LOCATION & HOURS SECTION
+       ========================================================================== -->
+  <section class="location-section" id="location">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">— Visit Us —</span>
+        <h2 class="section-title">Location & Hours</h2>
+        <p class="section-subtitle">Come and enjoy a peaceful moment with us.</p>
+      </div>
+
+      <div class="location-grid">
+        <!-- Information Box -->
+        <div class="info-card">
+          <div>
+            <div class="info-item">
+              <div class="info-icon">📍</div>
+              <div class="info-text">
+                <h4>Alamat Kafe</h4>
+                <p>Jl. Senopati No. 45, Kebayoran Baru, Jakarta Selatan, 12190</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">⏰</div>
+              <div class="info-text">
+                <h4>Jam Operasional</h4>
+                <p>Open Daily<br><strong>08.00 — 22.00 WIB</strong></p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">💬</div>
+              <div class="info-text">
+                <h4>Reservasi / Pertanyaan</h4>
+                <p>+62 812-3456-7890<br>hello@abynsstudio.com</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:20px;">
+            <span>Get Directions</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Google Maps View -->
+        <div class="map-card">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15865.020835472877!2d106.8049939!3d-6.2299867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1505378ca01%3A0x6b77d6eeae4a0705!2sSenopati%2C%20Kby.%20Baru%2C%20Kota%20Jakarta%20Selatan!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Peta Lokasi ABYNS Studio">
+          </iframe>
+        </div>
+
+        <!-- Cafe Exterior Facade -->
+        <div class="facade-card">
+          <img src="assets/images/cafe-facade.jpg" alt="ABYNS Studio Storefront" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CALL TO ACTION BANNER
+       ========================================================================== -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-tag">Be Part of Our Story</div>
+      <h2 class="cta-title">Let's Create More Beautiful Moments.</h2>
+      <div class="cta-buttons">
+        <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.99.54 1.772.84 2.793.84 3.183 0 5.768-2.587 5.769-5.766.001-3.182-2.585-5.767-5.767-5.767zm7.509 5.765c-.001 4.14-3.367 7.507-7.509 7.507-1.31 0-2.544-.343-3.619-.942l-4.412 1.157 1.178-4.303c-.696-1.119-1.077-2.428-1.077-3.419 0-4.142 3.367-7.508 7.508-7.508 4.142 0 7.509 3.366 7.51 7.508z"/>
+          </svg>
+          <span>Chat on WhatsApp</span>
+        </a>
+
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="btn btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span>Follow Instagram</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="#home" class="brand-logo">
+          <span class="brand-title">ABYNS</span>
+          <span class="brand-subtitle">STUDIO</span>
+        </a>
+
+        <ul class="footer-nav">
+          <li><a href="#home" class="footer-link">Home</a></li>
+          <li><a href="#signature" class="footer-link">Menu</a></li>
+          <li><a href="#story" class="footer-link">Our Story</a></li>
+          <li><a href="#gallery" class="footer-link">Gallery</a></li>
+          <li><a href="#reviews" class="footer-link">Reviews</a></li>
+          <li><a href="#location" class="footer-link">Contact</a></li>
+        </ul>
+
+        <div class="footer-socials">
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener" class="social-btn" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298 0 .594.045.88.134V9.4a6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 10.82 4.48c.038-.038.074-.077.11-.12.062-.07.12-.142.176-.217.067-.09.13-.183.187-.28a6.3 6.3 0 0 0 .8-3.08V8.92a8.27 8.27 0 0 0 4.89 1.57v-3.45a4.83 4.83 0 0 1-1.4-.35z"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.99.54 1.772.84 2.793.84 3.183 0 5.768-2.587 5.769-5.766.001-3.182-2.585-5.767-5.767-5.767zm7.509 5.765c-.001 4.14-3.367 7.507-7.509 7.507-1.31 0-2.544-.343-3.619-.942l-4.412 1.157 1.178-4.303c-.696-1.119-1.077-2.428-1.077-3.419 0-4.142 3.367-7.508 7.508-7.508 4.142 0 7.509 3.366 7.51 7.508z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 ABYNS Studio. All rights reserved.</div>
+        <div class="footer-motto">Good Coffee, Brighter Days.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       CART DRAWER & WHATSAPP CHECKOUT MODAL
+       ========================================================================== -->
+  <div class="cart-drawer-backdrop" id="cartBackdrop"></div>
+
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        Keranjang Pesanan
+      </h3>
+      <button class="cart-close-btn" id="closeCartBtn" aria-label="Tutup Keranjang">&times;</button>
+    </div>
+
+    <div class="cart-body">
+      <!-- Items List -->
+      <div class="cart-items-list" id="cartItemsList">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Voucher Promo Section -->
+      <div class="cart-promo-box">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:0.85rem; font-weight:700; color:var(--accent-espresso);">🎟️ Punya Kode Voucher?</span>
+          <span style="font-size:0.75rem; color:var(--accent-gold-dark);">Kode: HEAVEN15</span>
+        </div>
+        <div class="promo-input-group">
+          <input type="text" id="promoCodeInput" class="promo-input" placeholder="Masukkan kode promo...">
+          <button type="button" id="applyPromoBtn" class="promo-apply-btn">Terapkan</button>
+        </div>
+        <div id="promoMessage" class="promo-message"></div>
+      </div>
+
+      <!-- Customer Checkout Details -->
+      <div class="cart-checkout-form">
+        <div class="form-title">
+          <span>📋 Data Pemesan</span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="customerName">Nama Lengkap *</label>
+          <input type="text" id="customerName" class="form-control" placeholder="Contoh: Budi Santoso" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="customerPhone">Nomor WhatsApp *</label>
+          <input type="tel" id="customerPhone" class="form-control" placeholder="Contoh: 08123456789" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Metode Pesanan</label>
+          <div class="method-options">
+            <label class="method-label active">
+              <input type="radio" name="orderMethod" value="Dine In" checked>
+              Dine In
+            </label>
+            <label class="method-label">
+              <input type="radio" name="orderMethod" value="Takeaway">
+              Takeaway
+            </label>
+            <label class="method-label">
+              <input type="radio" name="orderMethod" value="Delivery">
+              Delivery
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="customerLocation">Nomor Meja / Alamat Pengiriman</label>
+          <input type="text" id="customerLocation" class="form-control" placeholder="Nomor Meja (Contoh: Meja 05)">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="orderNotes">Catatan Tambahan (Opsional)</label>
+          <textarea id="orderNotes" class="form-control" rows="2" placeholder="Contoh: Less sugar, es pisah, tanpa sedotan plastik..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart Summary & WhatsApp Checkout Button -->
+    <div class="cart-footer">
+      <div class="cart-summary-row">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">Rp 0</span>
+      </div>
+      <div class="cart-summary-row discount-row" id="cartDiscountRow" style="display:none;">
+        <span>Diskon Voucher</span>
+        <span id="cartDiscount">- Rp 0</span>
+      </div>
+      <div class="cart-summary-row total-row">
+        <span>Total Pembayaran</span>
+        <span id="cartTotal">Rp 0</span>
+      </div>
+
+      <button type="button" class="btn-whatsapp-checkout" id="whatsappCheckoutBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.99.54 1.772.84 2.793.84 3.183 0 5.768-2.587 5.769-5.766.001-3.182-2.585-5.767-5.767-5.767zm7.509 5.765c-.001 4.14-3.367 7.507-7.509 7.507-1.31 0-2.544-.343-3.619-.942l-4.412 1.157 1.178-4.303c-.696-1.119-1.077-2.428-1.077-3.419 0-4.142 3.367-7.508 7.508-7.508 4.142 0 7.509 3.366 7.51 7.508z"/>
+        </svg>
+        <span>Kirim Pesanan ke WhatsApp</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FLOATING CART BUTTON (FOR QUICK ACCESS)
+       ========================================================================== -->
+  <button class="floating-cart-btn open-cart-btn" aria-label="Buka Keranjang" title="Lihat Keranjang Belanja">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <path d="M16 10a4 4 0 0 1-8 0"></path>
+    </svg>
+    <span class="cart-badge" id="floatingCartCount">0</span>
+  </button>
+
+  <!-- ==========================================================================
+       GALLERY LIGHTBOX MODAL
+       ========================================================================== -->
+  <div class="lightbox-modal" id="galleryLightbox">
+    <button class="lightbox-close" id="closeLightboxBtn">&times;</button>
+    <div class="lightbox-content">
+      <img src="" alt="Gallery Preview" class="lightbox-img" id="lightboxImage">
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Main JavaScript File -->
+  <script src="js/app.js"></script>
+</body>
+</html>
