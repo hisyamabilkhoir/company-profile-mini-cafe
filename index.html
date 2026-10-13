@@ -77,45 +77,47 @@
       <div class="hero-overlay"></div>
     </div>
 
-    <div class="container hero-content">
-      <div class="hero-badge">
-        <span>✨ A Little Moment of Magic</span>
-      </div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="hero-tag">A LITTLE MOMENT OF MAGIC</span>
 
-      <h1 class="hero-title">
-        Where Every Sip<br>
-        <span>Feels Like Heaven.</span>
-      </h1>
+        <h1 class="hero-title">
+          Where Every Sip<br>
+          Feels Like Heaven.
+        </h1>
 
-      <p class="hero-subtitle">
-        A cozy cafe for dreamers, good coffee, and brighter days. Nikmati sentuhan rasa lembut dengan racikan barista terbaik kami.
-      </p>
+        <p class="hero-subtitle">
+          A cozy cafe for dreamers, good coffee, and brighter days.
+        </p>
 
-      <div class="hero-cta">
-        <a href="#menu" class="btn btn-primary">
-          <span>Explore Our Menu</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <div class="hero-cta">
+          <a href="#menu" class="btn btn-hero-primary">
+            <span>Explore Our Menu</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
 
-        <a href="#story" class="btn btn-secondary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
-          <span>Watch Our Story</span>
-        </a>
+          <a href="#story" class="btn btn-hero-secondary">
+            <span class="play-icon-wrap">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="8 5 19 12 8 19 8 5"/></svg>
+            </span>
+            <span>Watch Our Story</span>
+          </a>
+        </div>
       </div>
     </div>
 
     <div class="hero-controls">
       <div class="scroll-indicator">
-        <div class="scroll-line"></div>
-        <span>Scroll Down</span>
+        <span class="scroll-ornament">⚜</span>
+        <span class="scroll-text">SCROLL DOWN</span>
       </div>
 
-      <div style="display:flex; gap:10px;">
-        <button class="video-control-pill" id="videoToggleBtn" title="Jeda / Putar Video">
-          <span>⏸</span> Jeda Video
-        </button>
-        <button class="video-control-pill" id="videoMuteBtn" title="Suara Video">
-          <span>🔇</span> Suara Mati
+      <div class="hero-player-control">
+        <div class="audio-progress-bar">
+          <div class="audio-progress-fill"></div>
+        </div>
+        <button class="player-circle-btn" id="videoToggleBtn" title="Jeda / Putar Video" aria-label="Toggle Video Playback">
+          <span id="playerBtnIcon">❚❚</span>
         </button>
       </div>
     </div>

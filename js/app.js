@@ -197,7 +197,7 @@ function initNavbar() {
 function initHeroVideo() {
   const video = document.getElementById("heroVideo");
   const toggleBtn = document.getElementById("videoToggleBtn");
-  const muteBtn = document.getElementById("videoMuteBtn");
+  const icon = document.getElementById("playerBtnIcon");
 
   if (!video) return;
 
@@ -212,21 +212,12 @@ function initHeroVideo() {
     toggleBtn.addEventListener("click", () => {
       if (video.paused) {
         video.play();
-        toggleBtn.innerHTML = `<span>⏸</span> Jeda Video`;
+        if (icon) icon.innerText = "❚❚";
+        toggleBtn.setAttribute("title", "Jeda Video");
       } else {
         video.pause();
-        toggleBtn.innerHTML = `<span>▶</span> Putar Video`;
-      }
-    });
-  }
-
-  if (muteBtn) {
-    muteBtn.addEventListener("click", () => {
-      video.muted = !video.muted;
-      if (video.muted) {
-        muteBtn.innerHTML = `<span>🔇</span> Suara Mati`;
-      } else {
-        muteBtn.innerHTML = `<span>🔊</span> Bersuara`;
+        if (icon) icon.innerText = "▶";
+        toggleBtn.setAttribute("title", "Putar Video");
       }
     });
   }
