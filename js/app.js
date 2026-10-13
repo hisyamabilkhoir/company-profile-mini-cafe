@@ -26,7 +26,9 @@ const MENU_ITEMS = [
     price: 28000,
     oldPrice: 32000,
     image: "assets/images/cloud-latte.jpg",
-    badge: "Best Seller",
+    badge: "BEST SELLER",
+    badgeIcon: "👑",
+    scriptAccent: "Velvety Smooth",
     desc: "Smooth espresso with velvety milk and vanilla cloud foam.",
     ingredients: ["Espresso", "Fresh Milk", "Vanilla Syrup", "Cloud Cream"],
     flavorNotes: ["Creamy", "Smooth", "Vanilla", "Light Sweet"],
@@ -39,8 +41,10 @@ const MENU_ITEMS = [
     price: 30000,
     oldPrice: null,
     image: "assets/images/heavenly-matcha.jpg",
-    badge: "Favorite",
-    desc: "Earthy ceremonial matcha with creamy texture and gentle sweetness.",
+    badge: "FAVORITE",
+    badgeIcon: "🤎",
+    scriptAccent: "Creamy Matcha",
+    desc: "Earthy matcha with creamy texture and gentle sweetness.",
     ingredients: ["Ceremonial Matcha", "Oat Milk", "Cold Foam", "Honey"],
     flavorNotes: ["Earthy", "Velvety", "Balanced", "Fragrant"],
     servings: ["Iced", "Hot"]
@@ -52,8 +56,10 @@ const MENU_ITEMS = [
     price: 32000,
     oldPrice: 35000,
     image: "assets/images/angels-berry.jpg",
-    badge: "Seasonal",
-    desc: "Fresh berries, pure milk and a delicate touch of floral rose syrup.",
+    badge: "SEASONAL",
+    badgeIcon: "🍃",
+    scriptAccent: "Fresh Floral",
+    desc: "Fresh berries, milk and a delicate touch of floral rose syrup.",
     ingredients: ["Strawberry Compote", "Pure Milk", "Rose Petals", "Cream"],
     flavorNotes: ["Fruity", "Floral", "Refreshing", "Sweet"],
     servings: ["Iced"]
@@ -65,7 +71,9 @@ const MENU_ITEMS = [
     price: 24000,
     oldPrice: null,
     image: "assets/images/moon-croissant.jpg",
-    badge: "Signature",
+    badge: "SIGNATURE",
+    badgeIcon: "✦",
+    scriptAccent: "Buttery Perfection",
     desc: "Buttery golden French croissant with homemade vanilla custard cream.",
     ingredients: ["French Butter", "Flour", "Vanilla Pod", "Powdered Sugar"],
     flavorNotes: ["Flaky", "Buttery", "Vanilla", "Crisp"],
@@ -224,7 +232,7 @@ function initHeroVideo() {
 }
 
 /* ==========================================================================
-   SIGNATURE MENU
+   SIGNATURE MENU - REDESIGNED
    ========================================================================== */
 function renderSignatureMenu() {
   const container = document.getElementById("signatureMenuGrid");
@@ -233,26 +241,66 @@ function renderSignatureMenu() {
   const signatures = MENU_ITEMS.slice(0, 4);
 
   container.innerHTML = signatures.map(item => `
-    <div class="signature-card" data-id="${item.id}">
-      <div class="card-img-wrap" onclick="selectPreviewItem('${item.id}')">
+    <div class="sig-card-luxury" data-id="${item.id}">
+      <div class="sig-card-media" onclick="selectPreviewItem('${item.id}')">
         <img src="${item.image}" alt="${item.name}" loading="lazy">
-        ${item.badge ? `<span class="card-badge">${item.badge}</span>` : ''}
+        
+        <!-- Top Badge -->
+        <div class="sig-badge-pill">
+          <span class="badge-icon">${item.badgeIcon || '✦'}</span>
+          <span class="badge-text">${item.badge || 'SIGNATURE'}</span>
+        </div>
+
+        <!-- Wishlist / Heart Button -->
+        <button class="sig-heart-btn" onclick="toggleWishlist(event, '${item.id}')" title="Sukai menu ini" aria-label="Favorite">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+        </button>
+
+        <!-- Script Overlay Watermark -->
+        ${item.scriptAccent ? `<div class="sig-script-watermark">${item.scriptAccent}</div>` : ''}
       </div>
-      <div class="card-content">
-        <h4 class="card-title" onclick="selectPreviewItem('${item.id}')" style="cursor:pointer">${item.name}</h4>
-        <p class="card-desc">${item.desc}</p>
-        <div class="card-footer">
-          <div class="card-price-group">
-            <span class="card-price">${formatRupiah(item.price)}</span>
-            ${item.oldPrice ? `<span class="card-price-old">${formatRupiah(item.oldPrice)}</span>` : ''}
+
+      <div class="sig-card-info">
+        <div class="sig-title-price-row">
+          <h4 class="sig-card-name" onclick="selectPreviewItem('${item.id}')">${item.name}</h4>
+          <div class="sig-price-box">
+            <span class="sig-current-price">${formatRupiah(item.price)}</span>
+            ${item.oldPrice ? `<span class="sig-strikethrough-price">${formatRupiah(item.oldPrice)}</span>` : ''}
           </div>
-          <button class="card-add-btn" onclick="addToCartDirect('${item.id}')" title="Tambah ke keranjang">
+        </div>
+
+        <p class="sig-card-caption">${item.desc}</p>
+
+        <div class="sig-card-bottom-actions">
+          <button class="btn-sig-view-details" onclick="selectPreviewItem('${item.id}'); document.getElementById('menu')?.scrollIntoView({behavior:'smooth'});">
+            <span>View Details</span>
+            <span>→</span>
+          </button>
+          <button class="btn-sig-quick-add" onclick="event.stopPropagation(); addToCartDirect('${item.id}')" title="Tambah ke keranjang">
             +
           </button>
         </div>
       </div>
     </div>
   `).join("");
+}
+
+function toggleWishlist(e, itemId) {
+  e.stopPropagation();
+  const btn = e.currentTarget;
+  btn.classList.toggle("favorited");
+  const svg = btn.querySelector("svg");
+  if (btn.classList.contains("favorited")) {
+    svg.setAttribute("fill", "#c25e5e");
+    svg.setAttribute("stroke", "#c25e5e");
+    const item = MENU_ITEMS.find(m => m.id === itemId);
+    showToast(`❤️ ${item ? item.name : 'Menu'} ditambahkan ke favorit!`);
+  } else {
+    svg.setAttribute("fill", "none");
+    svg.setAttribute("stroke", "currentColor");
+  }
 }
 
 /* ==========================================================================
