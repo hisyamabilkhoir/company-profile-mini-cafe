@@ -84,9 +84,11 @@ const MENU_ITEMS = [
     name: "Caramel Dream",
     category: "coffee",
     price: 28000,
-    oldPrice: null,
+    oldPrice: 32000,
     image: "assets/images/caramel-dream.jpg",
-    badge: null,
+    badge: "CHEF'S PICK",
+    badgeIcon: "☕",
+    scriptAccent: "Caramelized",
     desc: "A rich espresso balanced with handcrafted artisanal caramel and sea salt cream.",
     ingredients: ["Espresso", "Sea Salt Caramel", "Fresh Milk", "Cream Foam"],
     flavorNotes: ["Caramelized", "Savory Sweet", "Velvety", "Bold"],
@@ -123,9 +125,11 @@ const MENU_ITEMS = [
     name: "Vanilla Cloud Latte",
     category: "coffee",
     price: 28000,
-    oldPrice: null,
+    oldPrice: 30000,
     image: "assets/images/cloud-latte.jpg",
-    badge: "Popular",
+    badge: "POPULAR",
+    badgeIcon: "✨",
+    scriptAccent: "Sweet Vanilla",
     desc: "Our signature blend of single-origin espresso and Madagascar vanilla cream.",
     ingredients: ["Arabica Espresso", "Whole Milk", "Vanilla Bean", "Cloud Foam"],
     flavorNotes: ["Smooth", "Floral Vanilla", "Silky", "Rich"],
@@ -156,6 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initNavbar();
   initHeroVideo();
   renderSignatureMenu();
+  initSignatureSlider();
   renderMenuGrid("all");
   initMenuFilters();
   initMenuSearch();
@@ -232,27 +237,31 @@ function initHeroVideo() {
 }
 
 /* ==========================================================================
-   SIGNATURE MENU - REDESIGNED WITH REAL SVG ICONS
+   SIGNATURE MENU - LUXURY CARDS WITH WAVE DIVIDER (~~) & SLIDER
    ========================================================================== */
 const SIG_BADGE_ICONS = {
   "cloud-latte": `<svg width="12" height="12" viewBox="0 0 24 24" fill="#B58D5A"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>`,
   "heavenly-matcha": `<svg width="11" height="11" viewBox="0 0 24 24" fill="#B58D5A"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>`,
   "angels-berry": `<svg width="11" height="11" viewBox="0 0 24 24" fill="#B58D5A"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.75C6.2 7.6 4.8 9.5 4 11.5c1.8-1.5 5.5-2.5 13-3.5z"/></svg>`,
-  "moon-croissant": `<svg width="11" height="11" viewBox="0 0 100 100" fill="#B58D5A"><path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/></svg>`
+  "moon-croissant": `<svg width="11" height="11" viewBox="0 0 100 100" fill="#B58D5A"><path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/></svg>`,
+  "caramel-dream": `<svg width="11" height="11" viewBox="0 0 24 24" fill="#B58D5A"><path d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.9 2-2V5c0-1.11-.89-2-2-2zm0 5h-2V5h2v3zM4 19h16v2H4z"/></svg>`,
+  "vanilla-cloud-latte": `<svg width="11" height="11" viewBox="0 0 24 24" fill="#B58D5A"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8 5.8 21.3l2.4-7.4L2 9.4h7.6z"/></svg>`
 };
 
 const SIG_WATERMARKS = {
   "cloud-latte": `<svg class="sig-card-watermark" viewBox="0 0 100 100" fill="none" stroke="#C5A880" stroke-width="1.3"><path d="M90 90 C70 80 50 75 40 50 C55 52 70 48 80 40 C75 55 65 65 90 90 Z M40 50 C35 40 38 25 50 15 C45 28 35 38 40 50 Z"/></svg>`,
   "heavenly-matcha": `<svg class="sig-card-watermark" viewBox="0 0 100 100" fill="none" stroke="#C5A880" stroke-width="1.3"><path d="M85 85 C65 75 55 60 50 40 C60 42 75 35 80 25 C75 40 65 50 85 85 Z M50 40 C40 35 30 40 20 50 C32 48 42 42 50 40 Z"/></svg>`,
   "angels-berry": `<svg class="sig-card-watermark" viewBox="0 0 100 100" fill="none" stroke="#C5A880" stroke-width="1.3"><path d="M95 95 C75 85 60 70 55 45 C68 48 80 40 85 30 C80 45 70 55 95 95 Z M55 45 C45 35 42 20 50 10 C46 22 40 32 55 45 Z"/></svg>`,
-  "moon-croissant": `<svg class="sig-card-watermark" viewBox="0 0 100 100" fill="none" stroke="#C5A880" stroke-width="1.3"><path d="M25 75 C35 55 55 45 80 55 C70 68 55 75 42 76 Z M38 58 C48 48 60 48 70 55 M46 48 C55 42 62 44 68 48"/></svg>`
+  "moon-croissant": `<svg class="sig-card-watermark" viewBox="0 0 100 100" fill="none" stroke="#C5A880" stroke-width="1.3"><path d="M25 75 C35 55 55 45 80 55 C70 68 55 75 42 76 Z M38 58 C48 48 60 48 70 55 M46 48 C55 42 62 44 68 48"/></svg>`,
+  "caramel-dream": `<svg class="sig-card-watermark" viewBox="0 0 100 100" fill="none" stroke="#C5A880" stroke-width="1.3"><path d="M90 90 C70 80 50 75 40 50 C55 52 70 48 80 40 C75 55 65 65 90 90 Z"/></svg>`,
+  "vanilla-cloud-latte": `<svg class="sig-card-watermark" viewBox="0 0 100 100" fill="none" stroke="#C5A880" stroke-width="1.3"><path d="M85 85 C65 75 55 60 50 40 C60 42 75 35 80 25 C75 40 65 50 85 85 Z"/></svg>`
 };
 
 function renderSignatureMenu() {
-  const container = document.getElementById("signatureMenuGrid");
+  const container = document.getElementById("signatureSliderTrack");
   if (!container) return;
 
-  const signatures = MENU_ITEMS.slice(0, 4);
+  const signatures = MENU_ITEMS.slice(0, 6);
 
   container.innerHTML = signatures.map(item => `
     <div class="sig-card-luxury sig-card-${item.id}" data-id="${item.id}">
@@ -274,6 +283,13 @@ function renderSignatureMenu() {
 
         <!-- Delicate Handwritten Script on Photo -->
         ${item.scriptAccent ? `<div class="sig-script-watermark script-${item.id}">${item.scriptAccent}</div>` : ''}
+
+        <!-- Organic Wave Divider (~~) -->
+        <div class="sig-wave-divider">
+          <svg class="sig-wave-svg" viewBox="0 0 500 50" preserveAspectRatio="none">
+            <path d="M0,20 C85,42 165,4 250,22 C335,42 415,4 500,24 L500,50 L0,50 Z" fill="#FFFFFF"></path>
+          </svg>
+        </div>
       </div>
 
       <div class="sig-card-info">
@@ -281,7 +297,17 @@ function renderSignatureMenu() {
           <h4 class="sig-card-name" onclick="selectPreviewItem('${item.id}')">${item.name}</h4>
           <div class="sig-price-box">
             <span class="sig-current-price">${formatRupiah(item.price)}</span>
-            ${item.oldPrice ? `<span class="sig-strikethrough-price">${formatRupiah(item.oldPrice)}</span>` : ''}
+            ${item.oldPrice ? `
+              <span class="sig-strikethrough-price">${formatRupiah(item.oldPrice)}</span>
+            ` : `
+              <div class="sig-price-ornament">
+                <svg width="24" height="6" viewBox="0 0 24 6" fill="none">
+                  <line x1="0" y1="3" x2="8" y2="3" stroke="#D4AF37" stroke-width="0.8"/>
+                  <circle cx="12" cy="3" r="1.5" fill="#D4AF37"/>
+                  <line x1="16" y1="3" x2="24" y2="3" stroke="#D4AF37" stroke-width="0.8"/>
+                </svg>
+              </div>
+            `}
           </div>
         </div>
 
@@ -297,7 +323,7 @@ function renderSignatureMenu() {
           </button>
           
           <button class="btn-sig-quick-add" onclick="event.stopPropagation(); addToCartDirect('${item.id}')" title="Tambah ke keranjang" aria-label="Tambah">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
               <line x1="12" y1="5" x2="12" y2="19"></line>
               <line x1="5" y1="12" x2="19" y2="12"></line>
             </svg>
@@ -309,6 +335,80 @@ function renderSignatureMenu() {
       ${SIG_WATERMARKS[item.id] || ''}
     </div>
   `).join("");
+}
+
+/* Signature Slider Logic */
+function initSignatureSlider() {
+  const track = document.getElementById("signatureSliderTrack");
+  const prevBtn = document.getElementById("sigPrevBtn");
+  const nextBtn = document.getElementById("sigNextBtn");
+  const dotsContainer = document.getElementById("sigSliderDots");
+  if (!track || !prevBtn || !nextBtn || !dotsContainer) return;
+
+  const cards = track.querySelectorAll(".sig-card-luxury");
+  if (cards.length === 0) return;
+
+  // Render pagination dots
+  dotsContainer.innerHTML = Array.from(cards).map((_, idx) => `
+    <button class="sig-dot ${idx === 0 ? 'active' : ''}" data-index="${idx}" aria-label="Slide ${idx + 1}"></button>
+  `).join("");
+
+  const dots = dotsContainer.querySelectorAll(".sig-dot");
+
+  function getScrollStep() {
+    const firstCard = cards[0];
+    if (!firstCard) return 300;
+    const style = window.getComputedStyle(track);
+    const gap = parseFloat(style.gap) || 22;
+    return firstCard.offsetWidth + gap;
+  }
+
+  function updateSliderState() {
+    const scrollLeft = track.scrollLeft;
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    const step = getScrollStep();
+    const activeIndex = Math.min(cards.length - 1, Math.max(0, Math.round(scrollLeft / step)));
+
+    // Update buttons
+    prevBtn.disabled = scrollLeft <= 8;
+    nextBtn.disabled = scrollLeft >= maxScroll - 8;
+
+    // Update active dot
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle("active", idx === activeIndex);
+    });
+  }
+
+  // Arrow navigation
+  prevBtn.addEventListener("click", () => {
+    const step = getScrollStep();
+    track.scrollBy({ left: -step, behavior: "smooth" });
+  });
+
+  nextBtn.addEventListener("click", () => {
+    const step = getScrollStep();
+    track.scrollBy({ left: step, behavior: "smooth" });
+  });
+
+  // Dot navigation
+  dots.forEach((dot, idx) => {
+    dot.addEventListener("click", () => {
+      const step = getScrollStep();
+      track.scrollTo({ left: idx * step, behavior: "smooth" });
+    });
+  });
+
+  // Track scroll listener
+  track.addEventListener("scroll", () => {
+    requestAnimationFrame(updateSliderState);
+  }, { passive: true });
+
+  window.addEventListener("resize", () => {
+    updateSliderState();
+  }, { passive: true });
+
+  // Initial state call
+  updateSliderState();
 }
 
 function toggleWishlist(e, itemId) {

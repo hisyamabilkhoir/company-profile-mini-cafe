@@ -798,41 +798,81 @@ input, textarea, select {
   box-shadow: var(--shadow-sm);
 }
 
-.signature-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
+/* ==========================================================================
+   SIGNATURE MENU - SLIDER & FULL-BLEED LUXURY CARDS WITH WAVE DIVIDER (~~)
+   ========================================================================== */
+.sig-slider-wrapper {
   position: relative;
-  z-index: 1;
+  width: 100%;
+  margin: 0 auto;
 }
 
-/* Luxury Signature Card */
+.sig-slider-track {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 14px 6px 26px;
+}
+
+.sig-slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Luxury Signature Card - Full Bleed Image (No Left/Right Padding) */
 .sig-card-luxury {
+  flex: 0 0 calc(25% - 16.5px);
+  min-width: 275px;
+  scroll-snap-align: start;
   background: #FFFFFF;
   border: 1px solid rgba(220, 202, 178, 0.65);
-  border-radius: 26px;
-  padding: 13px;
+  border-radius: 28px;
+  padding: 0; /* Zero padding: image spans 100% full bleed */
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow: hidden; /* Clips image and watermarks cleanly */
   box-shadow: 0 14px 35px rgba(180, 150, 115, 0.12), 0 2px 8px rgba(0, 0, 0, 0.02);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
-  overflow: hidden;
 }
 
 .sig-card-luxury:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 45px rgba(180, 150, 115, 0.22);
+  box-shadow: 0 22px 46px rgba(180, 150, 115, 0.22);
   border-color: var(--accent-gold);
 }
 
+@media (max-width: 1200px) {
+  .sig-slider-track .sig-card-luxury {
+    flex: 0 0 calc(33.333% - 15px);
+    min-width: 260px;
+  }
+}
+
+@media (max-width: 880px) {
+  .sig-slider-track .sig-card-luxury {
+    flex: 0 0 calc(50% - 11px);
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 580px) {
+  .sig-slider-track .sig-card-luxury {
+    flex: 0 0 84%;
+    min-width: 240px;
+  }
+}
+
+/* Card Photo Media - Full Bleed */
 .sig-card-media {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 18px;
-  overflow: hidden;
+  height: 250px;
   position: relative;
-  background: #FAF6F0;
+  overflow: hidden;
+  background: #F5EFE6;
   cursor: pointer;
 }
 
@@ -840,6 +880,7 @@ input, textarea, select {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -849,8 +890,8 @@ input, textarea, select {
   top: 0;
   left: 0;
   right: 0;
-  height: 55%;
-  background: radial-gradient(ellipse at 50% 0%, rgba(181, 141, 90, 0.3) 0%, transparent 80%);
+  height: 48%;
+  background: linear-gradient(180deg, rgba(160, 120, 75, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -859,11 +900,29 @@ input, textarea, select {
   transform: scale(1.06);
 }
 
+/* Wave Divider (~~) */
+.sig-wave-divider {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 42px;
+  z-index: 3;
+  pointer-events: none;
+  line-height: 0;
+}
+
+.sig-wave-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 /* Top-Left Vector Badge */
 .sig-badge-pill {
   position: absolute;
-  top: 11px;
-  left: 11px;
+  top: 12px;
+  left: 12px;
   z-index: 2;
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(8px);
@@ -893,8 +952,8 @@ input, textarea, select {
 /* Top-Right Heart Button */
 .sig-heart-btn {
   position: absolute;
-  top: 11px;
-  right: 11px;
+  top: 12px;
+  right: 12px;
   z-index: 2;
   width: 34px;
   height: 34px;
@@ -925,10 +984,10 @@ input, textarea, select {
 /* Handwritten Script Accent on Photo */
 .sig-script-watermark {
   font-family: 'Alex Brush', cursive;
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   line-height: 1;
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 2px 10px rgba(44, 30, 20, 0.5);
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 2px 9px rgba(44, 30, 20, 0.55);
   pointer-events: none;
   user-select: none;
   white-space: nowrap;
@@ -936,7 +995,7 @@ input, textarea, select {
 
 .script-cloud-latte {
   position: absolute;
-  top: 48%;
+  top: 46%;
   right: 14px;
   transform: translateY(-50%) rotate(4deg);
   z-index: 2;
@@ -944,7 +1003,7 @@ input, textarea, select {
 
 .script-heavenly-matcha {
   position: absolute;
-  top: 42%;
+  top: 40%;
   right: 12px;
   transform: translateY(-50%) rotate(-3deg);
   z-index: 2;
@@ -952,28 +1011,45 @@ input, textarea, select {
 
 .script-angels-berry {
   position: absolute;
-  top: 45%;
+  top: 42%;
   right: 14px;
-  transform: translateY(-50%) rotate(5deg);
+  transform: translateY(-50%) rotate(4deg);
   z-index: 2;
 }
 
 .script-moon-croissant {
   position: absolute;
   top: 24%;
-  left: 18%;
+  left: 20%;
   transform: rotate(-6deg);
   z-index: 2;
 }
 
-/* Card Body Info */
+.script-caramel-dream {
+  position: absolute;
+  top: 44%;
+  right: 14px;
+  transform: translateY(-50%) rotate(3deg);
+  z-index: 2;
+}
+
+.script-vanilla-cloud-latte {
+  position: absolute;
+  top: 42%;
+  right: 14px;
+  transform: translateY(-50%) rotate(-3deg);
+  z-index: 2;
+}
+
+/* Card Body Info (Padded Content Below Wave) */
 .sig-card-info {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  padding: 12px 4px 4px;
+  padding: 14px 20px 22px 20px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  background: #FFFFFF;
 }
 
 .sig-title-price-row {
@@ -981,16 +1057,17 @@ input, textarea, select {
   justify-content: space-between;
   align-items: flex-start;
   gap: 8px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .sig-card-name {
   font-family: var(--font-serif);
-  font-size: 1.35rem;
+  font-size: 1.24rem;
   font-weight: 600;
   color: var(--accent-espresso);
   cursor: pointer;
-  line-height: 1.25;
+  line-height: 1.22;
+  flex: 1;
 }
 
 .sig-card-name:hover {
@@ -1000,22 +1077,31 @@ input, textarea, select {
 .sig-price-box {
   text-align: right;
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .sig-current-price {
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--accent-espresso);
-  display: block;
-  line-height: 1.2;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
 }
 
 .sig-strikethrough-price {
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   color: var(--text-muted);
   text-decoration: line-through;
-  display: block;
   margin-top: 2px;
+}
+
+.sig-price-ornament {
+  display: flex;
+  align-items: center;
+  margin-top: 3px;
+  opacity: 0.75;
 }
 
 .sig-card-caption {
@@ -1023,7 +1109,6 @@ input, textarea, select {
   color: var(--text-secondary);
   line-height: 1.45;
   margin-bottom: 18px;
-  flex-grow: 1;
   min-height: 38px;
 }
 
@@ -1034,7 +1119,8 @@ input, textarea, select {
   justify-content: space-between;
   gap: 10px;
   margin-top: auto;
-  padding-top: 4px;
+  position: relative;
+  z-index: 2;
 }
 
 .btn-sig-view-details {
@@ -1042,7 +1128,7 @@ input, textarea, select {
   border: 1px solid rgba(200, 180, 155, 0.45);
   border-radius: var(--radius-full);
   padding: 8px 18px;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: #3E2B1E;
   display: inline-flex;
@@ -1056,12 +1142,12 @@ input, textarea, select {
   background: #ffffff;
   border-color: var(--accent-gold);
   transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(68, 45, 28, 0.06);
+  box-shadow: 0 4px 12px rgba(68, 45, 28, 0.08);
 }
 
 .btn-sig-quick-add {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: linear-gradient(135deg, #B89366 0%, #8A643E 100%);
   border: none;
@@ -1071,6 +1157,7 @@ input, textarea, select {
   box-shadow: 0 4px 14px rgba(138, 100, 62, 0.35);
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
 }
 
 .btn-sig-quick-add:hover {
@@ -1082,13 +1169,99 @@ input, textarea, select {
 /* Botanical Line Art Sketch Watermark */
 .sig-card-watermark {
   position: absolute;
-  bottom: -6px;
-  right: -4px;
-  width: 86px;
-  height: 86px;
+  bottom: 0;
+  right: 0;
+  width: 90px;
+  height: 90px;
   pointer-events: none;
-  opacity: 0.35;
-  z-index: 0;
+  opacity: 0.32;
+  z-index: 1;
+}
+
+/* Slider Arrow Buttons */
+.sig-slider-arrow {
+  position: absolute;
+  top: calc(50% - 14px);
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid rgba(197, 168, 128, 0.45);
+  color: var(--accent-espresso);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 6px 20px rgba(68, 45, 28, 0.12);
+  transition: all var(--transition-fast);
+}
+
+.sig-arrow-prev {
+  left: -12px;
+}
+
+.sig-arrow-next {
+  right: -12px;
+}
+
+.sig-slider-arrow:hover:not(:disabled) {
+  background: #FFFFFF;
+  border-color: var(--accent-gold);
+  color: var(--accent-gold-dark);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 10px 26px rgba(68, 45, 28, 0.2);
+}
+
+.sig-slider-arrow:active:not(:disabled) {
+  transform: translateY(-50%) scale(0.96);
+}
+
+.sig-slider-arrow:disabled {
+  opacity: 0;
+  visibility: hidden;
+  cursor: default;
+  pointer-events: none;
+}
+
+@media (max-width: 1280px) {
+  .sig-arrow-prev {
+    left: 4px;
+  }
+  .sig-arrow-next {
+    right: 4px;
+  }
+}
+
+/* Slider Pagination Dots */
+.sig-slider-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.sig-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(197, 168, 128, 0.35);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sig-dot.active {
+  width: 26px;
+  border-radius: 8px;
+  background: var(--accent-espresso);
+}
+
+.sig-dot:hover:not(.active) {
+  background: var(--accent-gold);
 }
 
 /* ==========================================================================
