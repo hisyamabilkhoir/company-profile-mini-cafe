@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ABYNS STUDIO — Where Every Sip Feels Like Heaven</title>
-  <meta name="description" content="A cozy sanctuary cafe for dreamers, handcrafted specialty coffee, artisan pastries, and brighter days at ABYNS Studio.">
+  <title>NANA CAFE — Where Every Sip Feels Like Heaven</title>
+  <meta name="description" content="A cozy sanctuary cafe for dreamers, handcrafted specialty coffee, artisan pastries, and brighter days at Nana Cafe.">
 
   <!-- Google Fonts: Cormorant Garamond, Alex Brush, Plus Jakarta Sans, & Italianno -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,10 +12,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Italianno&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=20261014">
+  <link rel="stylesheet" href="css/style.css?v=20261014_webp_v1">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C5A880' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M18 8h1a4 4 0 0 1 0 8h-1'></path><path d='M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z'></path><line x1='6' y1='1' x2='6' y2='4'></line><line x1='10' y1='1' x2='10' y2='4'></line><line x1='14' y1='1' x2='14' y2='4'></line></svg>">
 </head>
 <body>
 
@@ -25,8 +25,8 @@
   <header class="site-header" id="siteHeader">
     <div class="container nav-wrapper">
       <a href="#home" class="brand-logo">
-        <span class="brand-title">ABYNS</span>
-        <span class="brand-subtitle">STUDIO</span>
+        <span class="brand-title">NANA</span>
+        <span class="brand-subtitle">CAFE</span>
       </a>
 
       <nav>
@@ -108,7 +108,12 @@
 
     <div class="hero-controls">
       <div class="scroll-indicator">
-        <span class="scroll-ornament">⚜</span>
+        <span class="scroll-ornament">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="7 13 12 18 17 13"></polyline>
+            <polyline points="7 6 12 11 17 6"></polyline>
+          </svg>
+        </span>
         <span class="scroll-text">SCROLL DOWN</span>
       </div>
 
@@ -117,27 +122,83 @@
           <div class="audio-progress-fill"></div>
         </div>
         <button class="player-circle-btn" id="videoToggleBtn" title="Jeda / Putar Video" aria-label="Toggle Video Playback">
-          <span id="playerBtnIcon">❚❚</span>
+          <span id="playerBtnIcon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <rect x="6" y="4" width="4" height="16" rx="1"></rect>
+              <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+            </svg>
+          </span>
+        </button>
+        <button class="player-circle-btn" id="soundToggleBtn" title="Nyalakan Suara" aria-label="Toggle Audio Sound">
+          <span id="soundBtnIcon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <line x1="23" y1="9" x2="17" y2="15"></line>
+              <line x1="17" y1="9" x2="23" y2="15"></line>
+            </svg>
+          </span>
         </button>
       </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       PROMO TICKER / BANNER
+       PROMO CAPSULE BANNER (A LITTLE TREAT FOR YOUR DAY)
        ========================================================================== -->
-  <div class="promo-ticker">
+  <section class="promo-capsule-section">
     <div class="container">
-      <div class="promo-ticker-content">
-        <span>✨ Gunakan kode promo:</span>
-        <button class="promo-code-tag" onclick="applyPresetPromo('HEAVEN15')" title="Klik untuk pasang voucher">
-          HEAVEN15 (Diskon 15%)
-        </button>
-        <span style="opacity:0.5">•</span>
-        <span>Diskon Otomatis 10% untuk pesanan di atas Rp 100.000! ☕</span>
+      <div class="promo-capsule-pill">
+        <!-- Botanical Corner Flowers Left -->
+        <img src="assets/images/promo-flowers.webp" alt="" class="promo-flower promo-flower-left" loading="lazy">
+
+        <div class="promo-capsule-content">
+          <!-- Sparkle & Tagline -->
+          <div class="promo-capsule-lead">
+            <svg class="promo-sparkle-svg" width="15" height="15" viewBox="0 0 100 100" fill="#B58D5A">
+              <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/>
+            </svg>
+            <span class="promo-lead-text">A little treat for your day</span>
+          </div>
+
+          <!-- Promo Voucher Pill Button -->
+          <button type="button" class="promo-pill-code-btn" onclick="applyPresetPromo('HEAVEN15')" title="Klik untuk pasang voucher diskon 15%">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 12 20 22 4 22 4 12"></polyline>
+              <rect x="2" y="7" width="20" height="5"></rect>
+              <line x1="12" y1="22" x2="12" y2="7"></line>
+              <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+            </svg>
+            <span>HEAVEN15 • SAVE 15%</span>
+          </button>
+
+          <!-- Divider Pipe -->
+          <span class="promo-capsule-divider"></span>
+
+          <!-- Auto Discount Offer -->
+          <div class="promo-capsule-offer">
+            <svg class="promo-tag-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+              <line x1="7" y1="7" x2="7.01" y2="7"></line>
+            </svg>
+            <span>Extra 10% off orders over Rp 100.000</span>
+          </div>
+
+          <!-- Shop Now Action Link -->
+          <a href="#menu" class="promo-capsule-cta">
+            <span>Shop Now</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Botanical Corner Flowers Right -->
+        <img src="assets/images/promo-flowers.webp" alt="" class="promo-flower promo-flower-right" loading="lazy">
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- ==========================================================================
        SIGNATURE MENU SECTION - REDESIGNED
@@ -176,8 +237,22 @@
         </h2>
 
         <p class="section-subtitle">Handcrafted favorites, made to bring a little more magic to your day.</p>
+      </div>
 
-        <div class="signature-view-all-wrap">
+      <!-- Controls & Navigation Bar Above Menu -->
+      <div class="sig-slider-top-bar">
+        <div class="sig-slider-top-bar-left">
+          <span class="sig-slider-hint">
+            <span class="sig-hint-sparkle">
+              <svg width="11" height="11" viewBox="0 0 100 100" fill="#B58D5A">
+                <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/>
+              </svg>
+            </span>
+            Handcrafted specialty selections
+          </span>
+        </div>
+
+        <div class="sig-slider-top-bar-right">
           <a href="#menu" class="btn-sig-view-all">
             <span>View All Menu</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -185,25 +260,26 @@
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </a>
+
+          <div class="sig-slider-arrows">
+            <button class="sig-slider-arrow sig-arrow-prev" id="sigPrevBtn" aria-label="Menu Sebelumnya">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button class="sig-slider-arrow sig-arrow-next" id="sigNextBtn" aria-label="Menu Selanjutnya">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
       <div class="sig-slider-wrapper">
-        <button class="sig-slider-arrow sig-arrow-prev" id="sigPrevBtn" aria-label="Menu Sebelumnya">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
-        </button>
-
         <div class="sig-slider-track" id="signatureSliderTrack">
           <!-- Injected via JavaScript -->
         </div>
-
-        <button class="sig-slider-arrow sig-arrow-next" id="sigNextBtn" aria-label="Menu Selanjutnya">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </button>
       </div>
 
       <!-- Slider Pagination Dots -->
@@ -212,49 +288,225 @@
   </section>
 
   <!-- ==========================================================================
-       OUR STORY SECTION
+       OUR STORY SECTION (REDESIGNED ACCORDING TO LUXURY MOCKUP)
        ========================================================================== -->
   <section class="story-section" id="story">
-    <div class="container">
+    <div class="container story-container">
       <div class="story-wrapper">
-        <div class="story-visual">
-          <div class="story-arch-frame">
-            <img src="assets/images/story-interior.jpg" alt="ABYNS Studio Cafe Interior" loading="lazy">
+        
+        <!-- Left Visual Composition -->
+        <div class="story-visual-wrap">
+          <!-- Far Left Vertical Text Accent -->
+          <div class="story-vertical-accent">
+            <svg class="story-star-svg" width="12" height="12" viewBox="0 0 100 100" fill="#B58D5A">
+              <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/>
+            </svg>
+            <span class="story-vertical-line"></span>
+            <span class="story-vertical-text">COFFEE • PEOPLE • GOOD DAYS</span>
           </div>
-          <div class="story-floating-card">
-            <div class="floating-script">Good Coffee, Brighter Days.</div>
-            <div class="floating-sub">ABYNS STUDIO SANCTUARY</div>
+
+          <!-- Subtle Botanical Leaf Watermark Behind Arch -->
+          <svg class="story-leaf-watermark" viewBox="0 0 160 220" fill="none" stroke="#D7C4AF" stroke-width="1.2">
+            <path d="M20 200 C30 140 70 80 140 20 M70 120 C50 110 30 115 20 130 M95 85 C120 70 140 75 150 90 M50 150 C30 160 25 175 35 190 M115 55 C135 40 150 45 155 60"/>
+          </svg>
+
+          <!-- Grand Architectural Arch Frame -->
+          <div class="story-arch-outer">
+            <div class="story-arch-frame">
+              <img src="assets/images/story/cozy-pastel-cafe-counter.webp" alt="Nana Cafe Interior" id="storyMainImg" loading="lazy">
+              <!-- Script Accent at Bottom-Left of Photo -->
+              <div class="story-arch-script">
+                Good Coffee,<br>Brighter Days
+              </div>
+            </div>
+
+            <!-- Circular Stamp Badge at Top-Right of Arch -->
+            <div class="story-stamp-badge" title="Nana Cafe — A Little Escape Everyday">
+              <svg class="story-stamp-svg" width="94" height="94" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="47" fill="#FAF6F0" stroke="#C5A880" stroke-width="1.2" />
+                <circle cx="50" cy="50" r="43" fill="none" stroke="#C5A880" stroke-width="0.8" stroke-dasharray="2,2" />
+                <path id="stampTextPath" d="M 50, 50 m -32, 0 a 32,32 0 1,1 64,0 a 32,32 0 1,1 -64,0" fill="none" />
+                <text font-family="'Plus Jakarta Sans', sans-serif" font-size="7.4" font-weight="600" fill="#7C6148" letter-spacing="2.6">
+                  <textPath href="#stampTextPath" startOffset="50%" text-anchor="middle">
+                    A LITTLE ESCAPE • EVERYDAY •
+                  </textPath>
+                </text>
+                <g transform="translate(43, 43)">
+                  <path d="M7 0 C7 4.9 9.1 7 14 7 C9.1 7 7 9.1 7 14 C7 9.1 4.9 7 0 7 C4.9 7 7 4.9 7 0 Z" fill="#B58D5A"/>
+                </g>
+              </svg>
+            </div>
+
+            <!-- Overlapping Floating Card at Bottom-Right of Arch -->
+            <div class="story-floating-card">
+              <div class="floating-icon-bubble">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8C6641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                  <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                  <line x1="6" y1="2" x2="6" y2="5"></line>
+                  <line x1="10" y1="2" x2="10" y2="5"></line>
+                  <line x1="14" y1="2" x2="14" y2="5"></line>
+                </svg>
+              </div>
+              <div class="floating-card-texts">
+                <div class="floating-card-title">More Than<br>Just a Cafe</div>
+                <div class="floating-card-sub">NANA CAFE SANCTUARY</div>
+              </div>
+              <div class="floating-card-leaf">
+                <svg width="32" height="42" viewBox="0 0 50 60" fill="none" stroke="#C5A880" stroke-width="1.3">
+                  <path d="M25 58 C25 40 30 25 45 10 M25 45 C32 40 38 42 42 36 M25 35 C18 30 16 22 14 16 M25 25 C30 18 36 18 38 12 M25 15 C20 10 18 4 20 2"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Thumbnail Gallery Under Arch with Arrows (5 New Story Images) -->
+          <div class="story-thumbs-bar">
+            <button class="story-thumb-arrow" id="storyPrevThumbBtn" aria-label="Foto Sebelumnya">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <div class="story-thumbs-list">
+              <!-- BACKUP GAMBAR SEBELUMNYA (DIPERTAHANKAN SESUAI REQUEST)
+              <div class="story-thumb-item" onclick="switchStoryImage(0, 'assets/images/story-arch-main.webp')">
+                <img src="assets/images/story-arch-main.webp" alt="Cafe Interior Sanctuary">
+              </div>
+              <div class="story-thumb-item" onclick="switchStoryImage(1, 'assets/images/story-latte-badge.webp')">
+                <img src="assets/images/story-latte-badge.webp" alt="Silky Latte Art">
+              </div>
+              <div class="story-thumb-item" onclick="switchStoryImage(2, 'assets/images/story-corner-thumb.webp')">
+                <img src="assets/images/story-corner-thumb.webp" alt="Cozy Sunlit Corner">
+              </div>
+              -->
+              <div class="story-thumb-item active" onclick="switchStoryImage(0, 'assets/images/story/cozy-pastel-cafe-counter.webp')">
+                <img src="assets/images/story/cozy-pastel-cafe-counter.webp" alt="Cozy Pastel Cafe Counter Display">
+              </div>
+              <div class="story-thumb-item" onclick="switchStoryImage(1, 'assets/images/story/nana-cafe-signboard.webp')">
+                <img src="assets/images/story/nana-cafe-signboard.webp" alt="Nana Cafe Shop Signboard">
+              </div>
+              <div class="story-thumb-item" onclick="switchStoryImage(2, 'assets/images/story/sunlit-nana-cafe-corner.webp')">
+                <img src="assets/images/story/sunlit-nana-cafe-corner.webp" alt="Sunlit Nana Cafe Corner">
+              </div>
+              <div class="story-thumb-item" onclick="switchStoryImage(3, 'assets/images/story/cozy-pastel-cafe-corner-seating.webp')">
+                <img src="assets/images/story/cozy-pastel-cafe-corner-seating.webp" alt="Cozy Pastel Cafe Corner">
+              </div>
+              <div class="story-thumb-item" onclick="switchStoryImage(4, 'assets/images/story/sunlit-cottagecore-vanity.webp')">
+                <img src="assets/images/story/sunlit-cottagecore-vanity.webp" alt="Sunlit Cottagecore Vanity Vignette">
+              </div>
+            </div>
+            <button class="story-thumb-arrow" id="storyNextThumbBtn" aria-label="Foto Selanjutnya">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
           </div>
         </div>
 
+        <!-- Right Content Column -->
         <div class="story-content">
-          <span class="section-tag">— Our Story —</span>
-          <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">
-            A Little Escape<br>from the Ordinary
-          </h2>
+          <!-- Section Tag with Fine Side Lines -->
+          <div class="story-tag-wrap">
+            <span class="story-tag-line"></span>
+            <span class="story-tag-title">OUR STORY</span>
+            <span class="story-tag-line"></span>
+          </div>
+
+          <!-- Headline with Decorative Swoosh & Italic Accent -->
+          <div class="story-title-wrap">
+            <h2 class="story-main-title">
+              A Little Escape
+              <span class="story-title-sparkle">
+                <svg width="20" height="20" viewBox="0 0 100 100" fill="#B58D5A">
+                  <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/>
+                </svg>
+              </span>
+              <br>
+              from the <span class="story-title-italic">Ordinary</span>
+            </h2>
+            <!-- Fine Gold Curved Swoosh Line looping over Ordinary -->
+            <svg class="story-title-swoosh" viewBox="0 0 180 80" fill="none">
+              <path d="M10 20 C60 -10 130 -5 160 30 C180 52 170 70 145 72 C120 74 110 55 125 40" stroke="#C5A880" stroke-width="1.1" stroke-linecap="round"/>
+            </svg>
+          </div>
+
           <p class="story-paragraph">
-            ABYNS Studio hadir sebagai ruang kecil untuk beristirahat, bercerita, dan menikmati momen sederhana yang terasa istimewa. Terinspirasi dari langit yang tenang, setiap menu kami dibuat dengan bahan pilihan dan penuh perhatian.
+            Nana Cafe hadir sebagai ruang kecil untuk beristirahat, bercerita, dan menikmati momen sederhana yang terasa istimewa. Terinspirasi dari langit yang tenang, setiap menu kami dibuat dengan bahan pilihan dan penuh perhatian.
           </p>
 
-          <div class="story-features">
-            <div class="feature-item">
-              <span class="feature-number">100%</span>
-              <span class="feature-label">Arabica Specialty</span>
+          <!-- 3 Feature Stats with Real SVG Line Icons -->
+          <div class="story-stats-grid">
+            <div class="story-stat-card">
+              <div class="story-stat-icon">
+                <!-- Coffee Beans Line SVG -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7C6148" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="9" cy="13" rx="5" ry="6.5" transform="rotate(-30 9 13)"></ellipse>
+                  <path d="M6.5 8.5c1.8 1.8 2.6 5 3.2 7.5"></path>
+                  <ellipse cx="16" cy="11" rx="4.5" ry="5.5" transform="rotate(25 16 11)"></ellipse>
+                  <path d="M14.5 7c1 1.5 1.5 4 1.8 6.5"></path>
+                </svg>
+              </div>
+              <div class="story-stat-val">100%</div>
+              <div class="story-stat-lbl">ARABICA SPECIALTY</div>
             </div>
-            <div class="feature-item">
-              <span class="feature-number">24+</span>
-              <span class="feature-label">Artisan Menus</span>
+
+            <div class="story-stat-divider"></div>
+
+            <div class="story-stat-card">
+              <div class="story-stat-icon">
+                <!-- Chef Hat Line SVG -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7C6148" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 13.8A4 4 0 0 1 7.4 6a5.1 5.1 0 0 1 1-1.5 5 5 0 0 1 7.1 0A5.1 5.1 0 0 1 16.6 6 4 4 0 0 1 18 13.8V20H6Z"></path>
+                  <line x1="6" y1="16.5" x2="18" y2="16.5"></line>
+                </svg>
+              </div>
+              <div class="story-stat-val">24+</div>
+              <div class="story-stat-lbl">ARTISAN MENUS</div>
             </div>
-            <div class="feature-item">
-              <span class="feature-number">4.9★</span>
-              <span class="feature-label">Guest Rating</span>
+
+            <div class="story-stat-divider"></div>
+
+            <div class="story-stat-card">
+              <div class="story-stat-icon">
+                <!-- Star Line SVG -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7C6148" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <div class="story-stat-val">4.9</div>
+              <div class="story-stat-lbl">GUEST RATING</div>
             </div>
           </div>
 
-          <a href="#menu" class="btn btn-primary">
-            <span>Know Our Story</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+          <!-- Bottom Row: CTA Button + Circular Badge Accent -->
+          <div class="story-footer-row">
+            <a href="#menu" class="btn-story-know">
+              <span>Know Our Story</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+
+            <!-- Bottom-Right Circular Latte Badge with Orbit Lines -->
+            <div class="story-corner-badge-wrap">
+              <div class="story-corner-orbit">
+                <svg class="story-orbit-svg" width="130" height="110" viewBox="0 0 140 120" fill="none">
+                  <path d="M10 95 C25 20 95 10 135 60" stroke="#C5A880" stroke-width="1" opacity="0.6"/>
+                  <circle cx="28" cy="78" r="3" fill="#B58D5A" />
+                  <path d="M15 105 C60 125 115 110 138 85" stroke="#C5A880" stroke-width="0.8" opacity="0.4"/>
+                </svg>
+                <div class="story-corner-img-circle">
+                  <!-- Backup: <img src="assets/images/story-latte-badge.webp" alt="Coffee Moment" loading="lazy"> -->
+                  <img src="assets/images/story/sunlit-cottagecore-vanity.webp" alt="Cottagecore Cafe Vanity" loading="lazy">
+                </div>
+              </div>
+              <div class="story-corner-texts">
+                SIMPLE<br>MOMENTS,<br>LASTING<br>MEMORIES
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -263,34 +515,157 @@
   <!-- ==========================================================================
        DISCOVER MORE / FULL MENU SECTION
        ========================================================================== -->
+  <!-- ==========================================================================
+       DISCOVER MORE / FULL MENU SECTION (REDESIGNED TO MATCH LUXURY MOCKUP)
+       ========================================================================== -->
   <section class="menu-section" id="menu">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">— Discover More —</span>
-        <h2 class="section-title">Our Menu</h2>
+    <!-- Top-Left Subtle Watermark & Swoosh -->
+    <div class="menu-header-watermark-left">
+      <div class="menu-wm-star-swoosh">
+        <svg width="12" height="12" viewBox="0 0 100 100" fill="#B58D5A">
+          <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/>
+        </svg>
+        <svg class="menu-wm-curve-svg" viewBox="0 0 120 40" fill="none">
+          <path d="M10 35 C40 10 80 5 115 25" stroke="#C5A880" stroke-width="1" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="menu-wm-text">
+        GOOD<br>COFFEE<br>BRIGHTER<br>DAYS
+      </div>
+    </div>
+
+    <!-- Top-Right Floral Stamp Badge & Corner Flowers -->
+    <div class="menu-header-watermark-right">
+      <img src="assets/images/promo-flowers.webp" alt="" class="menu-corner-flowers" loading="lazy">
+      <div class="menu-sip-badge">
+        <svg class="menu-sip-badge-svg" width="86" height="86" viewBox="0 0 100 100">
+          <ellipse cx="50" cy="50" rx="46" ry="46" fill="#FAF6F0" stroke="#C5A880" stroke-width="1.2"/>
+          <ellipse cx="50" cy="50" rx="42" ry="42" fill="none" stroke="#C5A880" stroke-width="0.8" stroke-dasharray="2,2"/>
+          <path d="M35 50 C35 44 42 38 50 38 C58 38 65 44 65 50 M50 38 V62" stroke="#B58D5A" stroke-width="1" fill="none"/>
+        </svg>
+        <div class="menu-sip-text-group">
+          <span class="menu-sip-label">SIP</span>
+          <span class="menu-sip-label">SAVOR</span>
+          <span class="menu-sip-label">BELONG</span>
+          <svg class="menu-sip-star" width="9" height="9" viewBox="0 0 100 100" fill="#B58D5A">
+            <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="container menu-container">
+      <div class="section-header menu-section-header">
+        <div class="menu-tag-pill">
+          <span class="menu-tag-dash">—</span>
+          <span class="menu-tag-sparkle">✦</span>
+          <span class="menu-tag-text">DISCOVER MORE</span>
+          <span class="menu-tag-sparkle">✦</span>
+          <span class="menu-tag-dash">—</span>
+        </div>
+
+        <div class="menu-title-wrap">
+          <h2 class="menu-main-title">
+            <span class="title-sparkle-flank">
+              <svg width="18" height="18" viewBox="0 0 100 100" fill="#B58D5A">
+                <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/>
+              </svg>
+            </span>
+            Our Menu
+            <span class="title-sparkle-flank">
+              <svg width="18" height="18" viewBox="0 0 100 100" fill="#B58D5A">
+                <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/>
+              </svg>
+            </span>
+          </h2>
+          <!-- Fine Gold Curved Swoosh Line across title -->
+          <svg class="menu-title-wave-svg" viewBox="0 0 280 60" fill="none">
+            <path d="M10 40 C70 10 140 5 210 30 C240 40 270 35 275 25" stroke="#C5A880" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+
         <p class="section-subtitle">Made with quality ingredients, crafted with love.</p>
       </div>
 
       <!-- Filters & Live Search -->
       <div class="menu-filter-bar">
         <div class="filter-pills">
-          <button class="filter-btn active" data-category="all">All</button>
-          <button class="filter-btn" data-category="coffee">Coffee</button>
-          <button class="filter-btn" data-category="non-coffee">Non-Coffee</button>
-          <button class="filter-btn" data-category="tea">Tea</button>
-          <button class="filter-btn" data-category="pastry">Pastry</button>
+          <button class="filter-btn active" data-category="all">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>All</span>
+          </button>
+          <button class="filter-btn" data-category="coffee">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+              <line x1="6" y1="2" x2="6" y2="5"></line>
+              <line x1="10" y1="2" x2="10" y2="5"></line>
+              <line x1="14" y1="2" x2="14" y2="5"></line>
+            </svg>
+            <span>Coffee</span>
+          </button>
+          <button class="filter-btn" data-category="non-coffee">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 10h10l-1.5 11h-7L7 10z"></path>
+              <path d="M6 6h12v4H6V6z"></path>
+              <line x1="15" y1="2" x2="11" y2="6"></line>
+            </svg>
+            <span>Non-Coffee</span>
+          </button>
+          <button class="filter-btn" data-category="tea">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+            </svg>
+            <span>Tea</span>
+          </button>
+          <button class="filter-btn" data-category="pastry">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m4.5 16.5-1.5 3 4.5 1.5 1.5-3"></path>
+              <path d="m19.5 16.5 1.5 3-4.5 1.5-1.5-3"></path>
+              <path d="M6 18c0-5 3-10 6-10s6 5 6 10"></path>
+              <path d="M9 13a3 3 0 0 1 6 0"></path>
+            </svg>
+            <span>Pastry</span>
+          </button>
+          <button class="filter-btn" data-category="dessert">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"></path>
+              <path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"></path>
+              <path d="M2 21h20"></path>
+              <line x1="12" y1="7" x2="12" y2="11"></line>
+            </svg>
+            <span>Dessert</span>
+          </button>
         </div>
 
         <div class="search-box">
-          <span class="search-icon">🔍</span>
-          <input type="text" class="search-input" id="menuSearchInput" placeholder="Cari menu favoritmu...">
+          <span class="search-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+          <input type="text" class="search-input" id="menuSearchInput" placeholder="Search your favorite menu...">
         </div>
       </div>
 
-      <!-- Split Layout: Grid on Left, Live Detail Preview on Right -->
+      <!-- Split Layout: Grid on Left, Sticky Live Detail Preview on Right -->
       <div class="menu-layout">
-        <div class="menu-grid" id="menuGrid">
-          <!-- Injected via JavaScript -->
+        <div class="menu-left-column">
+          <div class="menu-grid" id="menuGrid">
+            <!-- Injected via JavaScript -->
+          </div>
+
+          <!-- Luxury Pagination Bar -->
+          <div class="menu-pagination-wrap" id="menuPagination">
+            <!-- Injected via JavaScript -->
+          </div>
         </div>
 
         <aside class="menu-preview-panel" id="menuPreviewPanel">
@@ -300,46 +675,92 @@
     </div>
   </section>
 
-  <!-- ==========================================================================
-       GALLERY SECTION
+    <!-- ==========================================================================
+       GALLERY SECTION (REDESIGNED TO MATCH LUXURY MOCKUP)
        ========================================================================== -->
   <section class="gallery-section" id="gallery">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">— Our Gallery —</span>
-        <h2 class="section-title">Moments at ABYNS ✦</h2>
+    <!-- Top-Left Subtle Watermark Stamp & Curved Swoosh -->
+    <div class="gallery-header-watermark-left">
+      <div class="gallery-stamp-wrap">
+        <svg class="gallery-stamp-svg" width="94" height="94" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="46" fill="#FAF6F0" stroke="#C5A880" stroke-width="1.2" />
+          <circle cx="50" cy="50" r="41" fill="none" stroke="#C5A880" stroke-width="0.8" stroke-dasharray="2,2" />
+          <path id="galleryStampPath" d="M 50, 50 m -30, 0 a 30,30 0 1,1 60,0 a 30,30 0 1,1 -60,0" fill="none" />
+          <text font-family="'Plus Jakarta Sans', sans-serif" font-size="6.8" font-weight="600" fill="#7C6148" letter-spacing="2.2">
+            <textPath href="#galleryStampPath" startOffset="50%" text-anchor="middle">
+              GOOD COFFEE • BRIGHTER DAYS •
+            </textPath>
+          </text>
+          <g transform="translate(43, 43)">
+            <path d="M7 0 C7 4.9 9.1 7 14 7 C9.1 7 7 9.1 7 14 C7 9.1 4.9 7 0 7 C4.9 7 7 4.9 7 0 Z" fill="#B58D5A"/>
+          </g>
+        </svg>
+      </div>
+      <!-- Fine gold wavy line loop extending out from stamp -->
+      <svg class="gallery-stamp-swoosh" viewBox="0 0 200 80" fill="none">
+        <path d="M10 55 C50 15 100 15 140 45 C170 65 190 45 198 30" stroke="#C5A880" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+      </svg>
+    </div>
+
+    <!-- Top-Right Floral Branch & Vertical Accent -->
+    <div class="gallery-header-watermark-right">
+      <div class="gallery-vertical-accent">
+        <div class="gallery-vertical-text">
+          <span>PEOPLE</span>
+          <span>COFFEE</span>
+          <span>SPACES</span>
+          <span>STORIES</span>
+        </div>
+        <span class="gallery-vertical-line"></span>
+      </div>
+      <img src="assets/images/promo-flowers.webp" alt="" class="gallery-corner-flowers" loading="lazy">
+    </div>
+
+    <div class="container gallery-container">
+      <div class="section-header gallery-section-header">
+        <span class="gallery-tag-pill">— OUR GALLERY —</span>
+        
+        <div class="gallery-title-wrap">
+          <h2 class="gallery-main-title">
+            Moments at Nana Cafe
+            <span class="title-sparkle-flank">
+              <svg width="20" height="20" viewBox="0 0 100 100" fill="#B58D5A">
+                <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/>
+              </svg>
+            </span>
+          </h2>
+        </div>
+
         <p class="section-subtitle">A glimpse of our space, our coffee, and the little details that make it special.</p>
-        <div style="margin-top: 16px;">
-          <a href="#gallery" class="btn-link">
+
+        <div class="gallery-cta-wrap">
+          <button type="button" class="btn-gallery-pill" onclick="openGalleryLightbox(0)">
             <span>View Gallery</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
         </div>
       </div>
 
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="assets/images/gallery-1.jpg" alt="Cafe Moment 1" loading="lazy">
+      <!-- Gallery Slider Container with Left & Right Floating Arrows -->
+      <div class="gallery-slider-wrapper">
+        <button class="gallery-slider-arrow gallery-arrow-prev" id="galleryPrevBtn" aria-label="Foto Sebelumnya">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <div class="gallery-slider-track" id="gallerySliderTrack">
+          <!-- Rendered dynamically by JavaScript -->
         </div>
-        <div class="gallery-item">
-          <img src="assets/images/gallery-2.jpg" alt="Cafe Moment 2" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="assets/images/gallery-3.jpg" alt="Cafe Moment 3" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="assets/images/gallery-4.jpg" alt="Cafe Moment 4" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="assets/images/gallery-5.jpg" alt="Cafe Moment 5" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="assets/images/gallery-6.jpg" alt="Cafe Moment 6" loading="lazy">
-          <div class="gallery-overlay-more">
-            <span class="plus">+12</span>
-            <span class="label">More Photos</span>
-          </div>
-        </div>
+
+        <button class="gallery-slider-arrow gallery-arrow-next" id="galleryNextBtn" aria-label="Foto Selanjutnya">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
       </div>
     </div>
   </section>
@@ -348,195 +769,907 @@
        REVIEWS / TESTIMONIALS SECTION
        ========================================================================== -->
   <section class="reviews-section" id="reviews">
+    <!-- Subtle Ambient Warm Glow -->
+    <div class="reviews-bg-glow"></div>
+
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">— Kind Words From Our Guests —</span>
-        <h2 class="section-title">Little Moments, Lovely Memories.</h2>
-      </div>
-
-      <div class="reviews-nav">
-        <button class="review-nav-btn" id="prevReviewBtn" aria-label="Previous Review">←</button>
-        <button class="review-nav-btn" id="nextReviewBtn" aria-label="Next Review">→</button>
-      </div>
-
-      <div class="reviews-grid">
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-quote">"Tempatnya super cozy, kopinya enak banget dan suasananya bikin betah! Cloud Latte-nya beneran lembut di tenggorokan."</p>
-          <div class="review-author">
-            <div class="author-avatar">
-              <img src="assets/images/avatar-1.jpg" alt="Citra A.">
+      <!-- Top Decorative Bar & Section Header -->
+      <div class="reviews-header-wrap">
+        <!-- Top Left: Circular Stamp, Golden Loop, & Vertical Stack Text -->
+        <div class="reviews-stamp-group">
+          <div class="reviews-circle-stamp">
+            <svg viewBox="0 0 100 100" class="circle-stamp-svg">
+              <path id="circleTextPath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
+              <text class="circle-stamp-text">
+                <textPath href="#circleTextPath" startOffset="50%" text-anchor="middle">
+                  · GOOD COFFEE · BRIGHTER DAYS ·
+                </textPath>
+              </text>
+            </svg>
+            <div class="stamp-center-sparkle">
+              <svg width="14" height="14" viewBox="0 0 100 100" fill="#B58D5A">
+                <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/>
+              </svg>
             </div>
-            <div>
-              <div class="author-name">Citra A.</div>
-              <div class="author-role">Coffee Enthusiast</div>
-            </div>
+          </div>
+          <!-- Golden Swoosh Path -->
+          <svg class="reviews-swoosh-line" width="90" height="60" viewBox="0 0 90 60" fill="none">
+            <path d="M 85 10 C 60 50, 20 60, 5 30 C -2 15, 10 5, 25 12 C 45 22, 50 55, 30 58" stroke="#D1B48C" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.75" />
+          </svg>
+          <!-- Stacked Vertical Words -->
+          <div class="reviews-stacked-words">
+            <span>PEOPLE</span>
+            <span>SPACES</span>
+            <span>STORIES</span>
           </div>
         </div>
 
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-quote">"Menu di sini unik dan rasanya benar-benar special. Definitely will come back! Pelayanannya ramah dan estetik banget buat foto."</p>
-          <div class="review-author">
-            <div class="author-avatar">
-              <img src="assets/images/avatar-2.jpg" alt="Ricky M.">
-            </div>
-            <div>
-              <div class="author-name">Ricky M.</div>
-              <div class="author-role">Creative Director</div>
-            </div>
-          </div>
+        <!-- Center: Tag, Title with Sparkle, Subtitle -->
+        <div class="reviews-title-center">
+          <span class="reviews-pre-tag">— KIND WORDS FROM OUR GUESTS —</span>
+          <h2 class="reviews-main-title">
+            Little Moments,<br>
+            <em>Lovely Memories.</em>
+            <span class="reviews-title-star">
+              <svg width="20" height="20" viewBox="0 0 100 100" fill="#B58D5A">
+                <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/>
+              </svg>
+            </span>
+          </h2>
+          <p class="reviews-main-subtitle">
+            Real stories, warm smiles, and memorable moments<br>from our amazing guests.
+          </p>
         </div>
 
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-quote">"Suka banget sama ambience-nya, serasa lagi di tempat yang tenang. Moon croissant-nya renyah dan cream-nya pas!"</p>
-          <div class="review-author">
-            <div class="author-avatar">
-              <img src="assets/images/avatar-3.jpg" alt="Nadya S.">
+        <!-- Top Right: Script Calligraphy Watermark & Arrow Navigation Buttons -->
+        <div class="reviews-header-right">
+          <div class="reviews-script-watermark">
+            <span class="script-line-1">More</span>
+            <span class="script-line-2">Than <span class="script-heart">♡</span></span>
+            <span class="script-line-3">Just Coffee</span>
+          </div>
+          <div class="reviews-nav-arrows">
+            <button class="review-nav-circle" id="prevReviewBtn" aria-label="Previous Review">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button class="review-nav-circle" id="nextReviewBtn" aria-label="Next Review">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider Track Container with 3 Luxury Split Cards -->
+      <div class="reviews-track-container">
+        <div class="reviews-slider-track" id="reviewsSliderTrack">
+          
+          <!-- Card 1: Citra A. -->
+          <div class="review-card-luxury" data-index="0">
+            <!-- Left Photo Box with Asymmetric Arch & Badges -->
+            <div class="review-photo-wrapper">
+              <img src="assets/images/story-latte-badge.webp" alt="Cloud Latte Moments at Nana Cafe" class="review-photo-img" loading="lazy">
+              <!-- Top-right Stamp Badge -->
+              <div class="review-badge-circle">
+                <svg viewBox="0 0 100 100" class="badge-ring-svg">
+                  <path id="badgeTextPath1" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
+                  <text class="badge-text-curved">
+                    <textPath href="#badgeTextPath1" startOffset="50%" text-anchor="middle">
+                      FAVORITE · MOMENT ·
+                    </textPath>
+                  </text>
+                </svg>
+                <div class="badge-inner-star">
+                  <svg width="10" height="10" viewBox="0 0 100 100" fill="#B58D5A">
+                    <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/>
+                  </svg>
+                </div>
+              </div>
+              <!-- Bottom Cursive Accent -->
+              <div class="review-photo-script">
+                Cozy Place <span class="script-heart-mini">♡</span>
+              </div>
             </div>
-            <div>
-              <div class="author-name">Nadya S.</div>
-              <div class="author-role">Food Blogger</div>
+
+            <!-- Right Content Box -->
+            <div class="review-content-wrapper">
+              <div class="review-stars-row">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+
+              <div class="review-quote-mark">“</div>
+
+              <p class="review-body-text">
+                "Tempatnya <span class="review-highlight">super cozy</span>, kopinya enak banget dan suasananya bikin betah! Cloud Latte-nya beneran <span class="review-highlight">lembut di tenggorokan</span>."
+              </p>
+
+              <div class="review-bottom-author">
+                <div class="author-info-left">
+                  <img src="assets/images/avatar-1.webp" alt="Citra A." class="author-avatar-img" loading="lazy">
+                  <div class="author-meta">
+                    <h4 class="author-name">Citra A.</h4>
+                    <span class="author-role">Coffee Enthusiast</span>
+                  </div>
+                </div>
+                <div class="review-close-mark">”</div>
+              </div>
             </div>
           </div>
+
+          <!-- Card 2: Ricky M. -->
+          <div class="review-card-luxury" data-index="1">
+            <!-- Left Photo Box with Asymmetric Arch & Botanical sprig -->
+            <div class="review-photo-wrapper">
+              <img src="assets/images/caramel-dream.webp" alt="Aesthetic ambiance at Nana Cafe" class="review-photo-img" loading="lazy">
+              <!-- Botanical sprig accent -->
+              <div class="review-botanical-accent">
+                <svg width="45" height="75" viewBox="0 0 45 75" fill="none">
+                  <path d="M 22 75 C 22 50, 20 25, 25 5" stroke="#C5A880" stroke-width="1.2" stroke-linecap="round"/>
+                  <path d="M 23 45 C 10 40, 5 30, 8 22 C 15 22, 21 35, 23 45 Z" fill="#D8C3A5" opacity="0.6"/>
+                  <path d="M 23 32 C 35 28, 40 18, 36 12 C 30 13, 25 24, 23 32 Z" fill="#D8C3A5" opacity="0.6"/>
+                  <circle cx="25" cy="5" r="3" fill="#B58D5A"/>
+                  <circle cx="21" cy="9" r="2.5" fill="#C5A880"/>
+                  <circle cx="28" cy="11" r="2.5" fill="#E8D9C5"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Right Content Box -->
+            <div class="review-content-wrapper">
+              <div class="review-stars-row">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+
+              <div class="review-quote-mark">“</div>
+
+              <p class="review-body-text">
+                "Menu di sini unik dan rasanya benar-benar <span class="review-highlight">special</span>. Definitely will come back! Pelayanannya ramah dan <span class="review-highlight">estetik banget</span> buat foto."
+              </p>
+
+              <div class="review-bottom-author">
+                <div class="author-info-left">
+                  <img src="assets/images/avatar-2.webp" alt="Ricky M." class="author-avatar-img" loading="lazy">
+                  <div class="author-meta">
+                    <h4 class="author-name">Ricky M.</h4>
+                    <span class="author-role">Creative Director</span>
+                  </div>
+                </div>
+                <div class="review-close-mark">”</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Nadya S. -->
+          <div class="review-card-luxury" data-index="2">
+            <!-- Left Photo Box with Asymmetric Arch & Badges -->
+            <div class="review-photo-wrapper">
+              <img src="assets/images/moon-croissant.webp" alt="Flaky Pastry at Nana Cafe" class="review-photo-img" loading="lazy">
+              <!-- Top-right Stamp Badge: LOVED IT -->
+              <div class="review-badge-circle">
+                <svg viewBox="0 0 100 100" class="badge-ring-svg">
+                  <path id="badgeTextPath3" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
+                  <text class="badge-text-curved">
+                    <textPath href="#badgeTextPath3" startOffset="50%" text-anchor="middle">
+                      LOVED · IT ·
+                    </textPath>
+                  </text>
+                </svg>
+                <div class="badge-inner-star">
+                  <span style="font-size: 11px; color: #B58D5A;">♡</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Content Box -->
+            <div class="review-content-wrapper">
+              <div class="review-stars-row">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+
+              <div class="review-quote-mark">“</div>
+
+              <p class="review-body-text">
+                "Suka banget sama ambience-nya, serasa lagi di tempat yang <span class="review-highlight">tenang</span>. Moon croissant-nya <span class="review-highlight">renyah</span> dan cream-nya pas!"
+              </p>
+
+              <div class="review-bottom-author">
+                <div class="author-info-left">
+                  <img src="assets/images/avatar-3.webp" alt="Nadya S." class="author-avatar-img" loading="lazy">
+                  <div class="author-meta">
+                    <h4 class="author-name">Nadya S.</h4>
+                    <span class="author-role">Food Blogger</span>
+                  </div>
+                </div>
+                <div class="review-close-mark">”</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Dimas P. -->
+          <div class="review-card-luxury" data-index="3">
+            <!-- Left Photo Box with Asymmetric Arch & Badges -->
+            <div class="review-photo-wrapper">
+              <img src="assets/images/classic-americano.webp" alt="Rich Espresso Ritual at Nana Cafe" class="review-photo-img" loading="lazy">
+              <!-- Top-right Stamp Badge -->
+              <div class="review-badge-circle">
+                <svg viewBox="0 0 100 100" class="badge-ring-svg">
+                  <path id="badgeTextPath4" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
+                  <text class="badge-text-curved">
+                    <textPath href="#badgeTextPath4" startOffset="50%" text-anchor="middle">
+                      BARISTA · PICK ·
+                    </textPath>
+                  </text>
+                </svg>
+                <div class="badge-inner-star">
+                  <svg width="10" height="10" viewBox="0 0 100 100" fill="#B58D5A">
+                    <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/>
+                  </svg>
+                </div>
+              </div>
+              <!-- Bottom Cursive Accent -->
+              <div class="review-photo-script">
+                Warm Cafe <span class="script-heart-mini">♡</span>
+              </div>
+            </div>
+
+            <!-- Right Content Box -->
+            <div class="review-content-wrapper">
+              <div class="review-stars-row">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+
+              <div class="review-quote-mark">“</div>
+
+              <p class="review-body-text">
+                "Tempat terbaik untuk kerja remote atau cari inspirasi arsitektur. Suasananya <span class="review-highlight">tenang & homy</span>, pencahayaan alami mantap, dan kopinya <span class="review-highlight">konsisten nikmat</span>."
+              </p>
+
+              <div class="review-bottom-author">
+                <div class="author-info-left">
+                  <img src="assets/images/avatar-2.webp" alt="Dimas P." class="author-avatar-img" loading="lazy">
+                  <div class="author-meta">
+                    <h4 class="author-name">Dimas P.</h4>
+                    <span class="author-role">Architect & Founder</span>
+                  </div>
+                </div>
+                <div class="review-close-mark">”</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Sarah K. -->
+          <div class="review-card-luxury" data-index="4">
+            <!-- Left Photo Box with Asymmetric Arch & Badges -->
+            <div class="review-photo-wrapper">
+              <img src="assets/images/heavenly-matcha.webp" alt="Heavenly Matcha Delight" class="review-photo-img" loading="lazy">
+              <!-- Top-right Stamp Badge -->
+              <div class="review-badge-circle">
+                <svg viewBox="0 0 100 100" class="badge-ring-svg">
+                  <path id="badgeTextPath5" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
+                  <text class="badge-text-curved">
+                    <textPath href="#badgeTextPath5" startOffset="50%" text-anchor="middle">
+                      MUST · TRY ·
+                    </textPath>
+                  </text>
+                </svg>
+                <div class="badge-inner-star">
+                  <svg width="10" height="10" viewBox="0 0 100 100" fill="#B58D5A">
+                    <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/>
+                  </svg>
+                </div>
+              </div>
+              <!-- Bottom Cursive Accent -->
+              <div class="review-photo-script">
+                Pure Bliss <span class="script-heart-mini">♡</span>
+              </div>
+            </div>
+
+            <!-- Right Content Box -->
+            <div class="review-content-wrapper">
+              <div class="review-stars-row">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+
+              <div class="review-quote-mark">“</div>
+
+              <p class="review-body-text">
+                "Heavenly Matcha-nya beneran <span class="review-highlight">terenak</span> yang pernah kucoba! Creamy tapi rasa matcha-nya tetep <span class="review-highlight">bold & balanced</span>, nggak kemanisan sama sekali."
+              </p>
+
+              <div class="review-bottom-author">
+                <div class="author-info-left">
+                  <img src="assets/images/avatar-1.webp" alt="Sarah K." class="author-avatar-img" loading="lazy">
+                  <div class="author-meta">
+                    <h4 class="author-name">Sarah K.</h4>
+                    <span class="author-role">Lifestyle Curator</span>
+                  </div>
+                </div>
+                <div class="review-close-mark">”</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Rendy T. -->
+          <div class="review-card-luxury" data-index="5">
+            <!-- Left Photo Box with Asymmetric Arch & Badges -->
+            <div class="review-photo-wrapper">
+              <img src="assets/images/strawberry-milk.webp" alt="Sweet refreshing moments at Nana Cafe" class="review-photo-img" loading="lazy">
+              <!-- Top-right Stamp Badge -->
+              <div class="review-badge-circle">
+                <svg viewBox="0 0 100 100" class="badge-ring-svg">
+                  <path id="badgeTextPath6" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
+                  <text class="badge-text-curved">
+                    <textPath href="#badgeTextPath6" startOffset="50%" text-anchor="middle">
+                      CHILL · VIBE ·
+                    </textPath>
+                  </text>
+                </svg>
+                <div class="badge-inner-star">
+                  <svg width="10" height="10" viewBox="0 0 100 100" fill="#B58D5A">
+                    <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/>
+                  </svg>
+                </div>
+              </div>
+              <!-- Bottom Cursive Accent -->
+              <div class="review-photo-script">
+                Sweet Joy <span class="script-heart-mini">♡</span>
+              </div>
+            </div>
+
+            <!-- Right Content Box -->
+            <div class="review-content-wrapper">
+              <div class="review-stars-row">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+
+              <div class="review-quote-mark">“</div>
+
+              <p class="review-body-text">
+                "Vibe kafe-nya luar biasa nyaman, playlist musiknya selalu <span class="review-highlight">on-point</span>. Sangat betah ngobrol atau brainstorming berjam-jam bareng klien!"
+              </p>
+
+              <div class="review-bottom-author">
+                <div class="author-info-left">
+                  <img src="assets/images/avatar-3.webp" alt="Rendy T." class="author-avatar-img" loading="lazy">
+                  <div class="author-meta">
+                    <h4 class="author-name">Rendy T.</h4>
+                    <span class="author-role">Music Producer</span>
+                  </div>
+                </div>
+                <div class="review-close-mark">”</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bottom Decorative Bar -->
+      <div class="reviews-bottom-bar">
+        <!-- Bottom Left: Tagline -->
+        <div class="reviews-bottom-tagline">
+          <span class="tagline-dash">—</span>
+          <span>REAL PEOPLE. SWEETER STORIES.</span>
+        </div>
+
+        <!-- Bottom Center: Interactive Pagination Dots -->
+        <div class="reviews-pagination" id="reviewsPagination">
+          <button class="review-dot active" data-index="0" aria-label="Go to review 1"></button>
+          <button class="review-dot" data-index="1" aria-label="Go to review 2"></button>
+          <button class="review-dot" data-index="2" aria-label="Go to review 3"></button>
+          <button class="review-dot" data-index="3" aria-label="Go to review 4"></button>
+          <button class="review-dot" data-index="4" aria-label="Go to review 5"></button>
+          <button class="review-dot" data-index="5" aria-label="Go to review 6"></button>
+        </div>
+
+        <!-- Bottom Right: Thank You Note & Coffee Bean Line -->
+        <div class="reviews-bottom-thankyou">
+          <!-- Curving Golden Connection Line -->
+          <svg class="thankyou-swoop-line" width="55" height="20" viewBox="0 0 55 20" fill="none">
+            <path d="M 0 16 C 20 16, 35 4, 55 4" stroke="#D1B48C" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+          <svg class="thankyou-bean-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M19.5 4.5 C15.5 1.5 8 3 4.5 7 C1 11 1.5 17 5.5 20 C9.5 23 17 21.5 20.5 17.5 C24 13.5 23.5 7.5 19.5 4.5 Z" fill="#B58D5A"/>
+            <path d="M7 6 C9.5 8.5, 9 12, 12 12 C15 12, 14.5 15.5, 17 18" stroke="#FAF6F0" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <div class="thankyou-text">
+            <span>THANK YOU FOR</span>
+            <span>BEING PART OF OUR STORY</span>
+          </div>
+          <span class="thankyou-sparkle">
+            <svg width="14" height="14" viewBox="0 0 100 100" fill="#B58D5A">
+              <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/>
+            </svg>
+          </span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       LOCATION & HOURS SECTION
+       LOCATION & HOURS SECTION (EXACT LUXURY MOCKUP FIDELITY)
        ========================================================================== -->
   <section class="location-section" id="location">
+    <!-- Subtle Ambient Warm Glow -->
+    <div class="location-bg-glow"></div>
+
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">— Visit Us —</span>
-        <h2 class="section-title">Location & Hours</h2>
-        <p class="section-subtitle">Come and enjoy a peaceful moment with us.</p>
+      <!-- Section Header with Watermarks -->
+      <div class="location-header-wrap">
+        <!-- Left Vertical Decorative Line & Text -->
+        <div class="location-header-decor-left">
+          <span class="decor-star">✦</span>
+          <div class="decor-line"></div>
+          <span class="decor-text">PEOPLE · COFFEE · GOOD DAYS</span>
+        </div>
+
+        <!-- Center Title -->
+        <div class="location-title-center">
+          <span class="location-pre-tag">— VISIT US —</span>
+          <h2 class="location-main-title">
+            Location & Hours
+            <span class="location-title-star">
+              <svg width="22" height="22" viewBox="0 0 100 100" fill="#B58D5A">
+                <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/>
+              </svg>
+            </span>
+          </h2>
+          <p class="location-main-subtitle">Come and enjoy a peaceful moment with us.</p>
+        </div>
+
+        <!-- Right Circular Stamp & Looping Golden Thread -->
+        <div class="location-header-stamp-right">
+          <div class="location-circle-stamp">
+            <svg viewBox="0 0 100 100" class="circle-stamp-svg">
+              <path id="locStampPath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
+              <text class="circle-stamp-text">
+                <textPath href="#locStampPath" startOffset="50%" text-anchor="middle">
+                  · GOOD COFFEE · BRIGHTER DAYS ·
+                </textPath>
+              </text>
+            </svg>
+            <div class="stamp-center-sparkle">
+              <svg width="14" height="14" viewBox="0 0 100 100" fill="#B58D5A">
+                <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/>
+              </svg>
+            </div>
+          </div>
+          <!-- Golden swoosh looping down to the right -->
+          <svg class="location-swoosh-line" width="90" height="70" viewBox="0 0 90 70" fill="none">
+            <path d="M 10 5 C 30 15, 65 10, 75 35 C 85 55, 65 65, 45 55 C 35 50, 40 38, 55 40 C 70 42, 85 60, 88 68" stroke="#D1B48C" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.75" />
+          </svg>
+        </div>
       </div>
 
-      <div class="location-grid">
-        <!-- Information Box -->
-        <div class="info-card">
-          <div>
-            <div class="info-item">
-              <div class="info-icon">📍</div>
-              <div class="info-text">
-                <h4>Alamat Kafe</h4>
-                <p>Jl. Senopati No. 45, Kebayoran Baru, Jakarta Selatan, 12190</p>
+      <!-- Main 3-Column Luxury Grid -->
+      <div class="location-grid-luxury">
+        
+        <!-- Column 1: Info Card -->
+        <div class="location-info-card">
+          <div class="info-items-stack">
+            <!-- Item 1: Alamat Kafe -->
+            <a href="https://maps.google.com/?q=Senopati+Kebayoran+Baru+Jakarta" target="_blank" rel="noopener" class="loc-item-row">
+              <div class="loc-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A5A38" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="loc-item-text">
+                <h4 class="loc-item-title">Alamat Kafe</h4>
+                <p class="loc-item-desc">Jl. Senopati No. 45, Kebayoran Baru, Jakarta Selatan, 12190</p>
+              </div>
+              <div class="loc-item-arrow">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7A5A38" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
+            </a>
+
+            <!-- Item 2: Jam Operasional -->
+            <div class="loc-item-row">
+              <div class="loc-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A5A38" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="loc-item-text">
+                <h4 class="loc-item-title">Jam Operasional</h4>
+                <p class="loc-item-desc">Open Daily<br><strong>08.00 — 22.00 WIB</strong></p>
+              </div>
+              <div class="loc-item-arrow">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7A5A38" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
               </div>
             </div>
 
-            <div class="info-item">
-              <div class="info-icon">⏰</div>
-              <div class="info-text">
-                <h4>Jam Operasional</h4>
-                <p>Open Daily<br><strong>08.00 — 22.00 WIB</strong></p>
+            <!-- Item 3: WhatsApp & Reservasi -->
+            <a href="https://wa.me/6282221519098?text=Halo%20Nana%20Cafe%20Shop,%20saya%20ingin%20tanya%20reservasi" target="_blank" rel="noopener" class="loc-item-row">
+              <div class="loc-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A5A38" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
               </div>
-            </div>
+              <div class="loc-item-text">
+                <h4 class="loc-item-title">WhatsApp & Reservasi</h4>
+                <p class="loc-item-desc"><strong>0822-2151-9098</strong><br>Fast Response WhatsApp</p>
+              </div>
+              <div class="loc-item-arrow">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7A5A38" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
+            </a>
 
-            <div class="info-item">
-              <div class="info-icon">💬</div>
-              <div class="info-text">
-                <h4>Reservasi / Pertanyaan</h4>
-                <p>+62 812-3456-7890<br>hello@abynsstudio.com</p>
+            <!-- Item 4: Instagram & TikTok -->
+            <div class="loc-item-row" style="cursor: default;">
+              <div class="loc-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A5A38" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </div>
+              <div class="loc-item-text">
+                <h4 class="loc-item-title">Instagram & TikTok</h4>
+                <p class="loc-item-desc">
+                  IG: <a href="https://www.instagram.com/nana_cafeshop/" target="_blank" rel="noopener" style="color:var(--accent-espresso); font-weight:600; text-decoration:underline;">@nana_cafeshop</a> &bull; <a href="https://www.instagram.com/nanacafeshop_bkl/" target="_blank" rel="noopener" style="color:var(--accent-espresso); font-weight:600; text-decoration:underline;">@nanacafeshop_bkl</a><br>
+                  TikTok: <a href="https://www.tiktok.com/@nanacafeshop" target="_blank" rel="noopener" style="color:var(--accent-espresso); font-weight:600; text-decoration:underline;">@nanacafeshop</a>
+                </p>
               </div>
             </div>
           </div>
 
-          <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:20px;">
+          <!-- Bottom Pill Button -->
+          <a href="https://maps.google.com/?q=Senopati+Kebayoran+Baru+Jakarta" target="_blank" rel="noopener" class="loc-directions-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
             <span>Get Directions</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
           </a>
         </div>
 
-        <!-- Google Maps View -->
-        <div class="map-card">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15865.020835472877!2d106.8049939!3d-6.2299867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1505378ca01%3A0x6b77d6eeae4a0705!2sSenopati%2C%20Kby.%20Baru%2C%20Kota%20Jakarta%20Selatan!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Peta Lokasi ABYNS Studio">
-          </iframe>
+        <!-- Column 2: Aesthetic Interactive Map -->
+        <div class="location-map-card" id="locationMapCard">
+          <!-- Vector Map Visual Canvas / Interactive Viewport -->
+          <div class="map-aesthetic-canvas" id="mapAestheticCanvas" title="Geser untuk menjelajahi peta atau klik tombol zoom">
+            <div class="map-zoom-viewport" id="mapZoomViewport">
+              <div class="map-zoom-layer" id="mapZoomLayer">
+                <svg class="map-svg-grid" id="mapSvgGrid" viewBox="0 0 500 450" preserveAspectRatio="xMidYMid slice">
+                  <!-- Soft Beige Land Background -->
+                  <rect width="500" height="450" fill="#F4EFE6" />
+                  
+                  <!-- Soft Pastel Green Parks & Green Spaces -->
+                  <path d="M 320 40 C 370 30, 440 60, 460 120 C 420 130, 360 100, 320 40 Z" fill="#E2EAD9" opacity="0.8" />
+                  <path d="M 60 280 C 110 260, 150 290, 140 350 C 90 370, 50 340, 60 280 Z" fill="#E2EAD9" opacity="0.8" />
+                  <path d="M 280 250 C 340 230, 390 270, 370 340 C 310 350, 260 300, 280 250 Z" fill="#E2EAD9" opacity="0.7" />
+
+                  <!-- Main Roads & Street Grid -->
+                  <!-- Highway / Main Boulevards (Wide cream/white) -->
+                  <path d="M -20 180 C 120 160, 300 200, 520 140" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" fill="none" />
+                  <path d="M 180 -20 C 200 120, 220 300, 260 470" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" fill="none" />
+                  <path d="M 340 -20 C 320 150, 380 320, 420 470" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" fill="none" />
+                  <path d="M -20 320 C 150 300, 350 360, 520 300" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" fill="none" />
+                  
+                  <!-- Secondary Streets -->
+                  <path d="M 40 40 L 220 180" stroke="#FFFFFF" stroke-width="6" fill="none" />
+                  <path d="M 80 120 L 480 80" stroke="#FFFFFF" stroke-width="5" fill="none" />
+                  <path d="M 120 220 L 320 400" stroke="#FFFFFF" stroke-width="6" fill="none" />
+                  <path d="M 240 100 L 460 220" stroke="#FFFFFF" stroke-width="5" fill="none" />
+                  <path d="M 220 280 L 480 320" stroke="#FFFFFF" stroke-width="6" fill="none" />
+                  <path d="M 20 400 L 260 360" stroke="#FFFFFF" stroke-width="5" fill="none" />
+                  <path d="M 300 120 L 260 260" stroke="#FFFFFF" stroke-width="5" fill="none" />
+                  
+                  <!-- Subtle River / Waterway Curve -->
+                  <path d="M 380 -20 C 410 100, 470 250, 490 470" stroke="#DDE7EA" stroke-width="6" fill="none" />
+
+                  <!-- Area District Labels -->
+                  <text x="350" y="80" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#8C7A68" letter-spacing="1">SCBD</text>
+                  <text x="180" y="150" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#9C8B7A">Senopati</text>
+                  <text x="330" y="240" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#9C8B7A">Senopati</text>
+                  <text x="210" y="320" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#9C8B7A">SCBD</text>
+                  <text x="80" y="370" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="600" fill="#5A88B5">Plaza Senayan</text>
+                  <text x="350" y="390" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#7A6857">Kebayoran Baru</text>
+                  <text x="270" y="360" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#4A75A0">Blok M</text>
+
+                  <!-- Detailed Street Names (Highlighted on Zoom) -->
+                  <text x="260" y="196" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="700" fill="#7A6553" transform="rotate(-6 260 196)">Jl. Senopati</text>
+                  <text x="215" y="85" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="600" fill="#8A7663" transform="rotate(78 215 85)">Jl. Suryo</text>
+                  <text x="375" y="175" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="600" fill="#8A7663" transform="rotate(72 375 175)">Jl. Jend. Sudirman</text>
+                  <text x="135" y="322" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="600" fill="#8A7663" transform="rotate(-5 135 322)">Jl. Gunawarman</text>
+                </svg>
+
+                <!-- Central Floating Map Pin & Info Popup (Anchored directly inside zoom layer at 50%, 40%) -->
+                <div class="map-center-marker-wrap" id="mapCenterMarkerWrap">
+                  <div class="map-pin-pulse"></div>
+                  <div class="map-pin-icon">
+                    <svg width="24" height="30" viewBox="0 0 24 30" fill="#5A3A1E">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 18 12 18s12-9 12-18c0-6.63-5.37-12-12-12zm0 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
+                    </svg>
+                  </div>
+                  <div class="map-floating-popup" onclick="event.stopPropagation(); window.open('https://maps.google.com/?q=Senopati+Kebayoran+Baru+Jakarta','_blank')" title="Klik untuk Buka di Google Maps">
+                    <div class="popup-head">
+                      <span class="popup-pin-dot"></span>
+                      <strong class="popup-name">Nana Cafe</strong>
+                    </div>
+                    <div class="popup-addr">Jl. Senopati No. 45, Kebayoran Baru, Jakarta Selatan</div>
+                    <div class="popup-open-link">Buka di Google Maps ↗</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Map Controls (Top Left: Zoom) -->
+            <div class="map-ctrl-zoom" onclick="event.stopPropagation()">
+              <button class="zoom-btn" id="mapZoomInBtn" onclick="handleMapZoom(1)" aria-label="Zoom in" title="Perbesar Peta">+</button>
+              <div class="zoom-divider"></div>
+              <button class="zoom-btn" id="mapZoomOutBtn" onclick="handleMapZoom(-1)" aria-label="Zoom out" title="Perkecil Peta">−</button>
+            </div>
+
+            <!-- Zoom Level Badge Indicator -->
+            <div class="map-zoom-badge" id="mapZoomBadge">100%</div>
+
+            <!-- Map Control (Top Right: Fullscreen) -->
+            <button class="map-ctrl-btn map-btn-fullscreen" onclick="event.stopPropagation(); window.open('https://maps.google.com/?q=Senopati+Kebayoran+Baru+Jakarta','_blank')" aria-label="Buka Peta Penuh" title="Buka di Google Maps">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+              </svg>
+            </button>
+
+            <!-- Map Control (Bottom Left: Locate) -->
+            <button class="map-ctrl-btn map-btn-locate" onclick="event.stopPropagation(); resetMapPosition()" aria-label="Pusatkan Lokasi" title="Pusatkan ke Nana Cafe">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+
+            <!-- Bottom Travel Distance Floating Pill -->
+            <div class="map-travel-pill" onclick="event.stopPropagation(); window.open('https://maps.google.com/?q=Senopati+Kebayoran+Baru+Jakarta','_blank')" title="Lihat Petunjuk Arah">
+              <span class="pill-car-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-1px;">
+                  <rect x="3" y="11" width="18" height="8" rx="2"></rect>
+                  <path d="M5 11l2-5h10l2 5"></path>
+                  <circle cx="7.5" cy="16.5" r="1.5"></circle>
+                  <circle cx="16.5" cy="16.5" r="1.5"></circle>
+                </svg>
+              </span>
+              <span class="pill-time">5 menit dari Senopati</span>
+              <span class="pill-pipe">|</span>
+              <span class="pill-time">12 menit dari Blok M</span>
+              <span class="pill-arrow">›</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Cafe Exterior Facade -->
-        <div class="facade-card">
-          <img src="assets/images/cafe-facade.jpg" alt="ABYNS Studio Storefront" loading="lazy">
+        <!-- Column 3: Cafe Atmosphere Showcase with Thumbnails -->
+        <div class="location-showcase-card">
+          <!-- Main Showcase Photo -->
+          <div class="showcase-main-photo-wrap">
+            <img src="assets/images/location-cafe-interior.webp" alt="A Cozy Place at Nana Cafe" id="locationMainPhoto" class="showcase-main-img" loading="lazy">
+            <div class="showcase-photo-gradient"></div>
+            <!-- Bottom Left Calligraphy Overlay -->
+            <div class="showcase-script-overlay">
+              <div class="showcase-script-title">A Cozy Place</div>
+              <div class="showcase-script-subtitle">GOOD COFFEE, BRIGHTER DAYS.</div>
+            </div>
+          </div>
+
+          <!-- Bottom Thumbnail Navigation Row -->
+          <div class="showcase-thumbs-row">
+            <button class="showcase-thumb-btn active" data-src="assets/images/location-cafe-interior.webp" aria-label="Lihat Interior Kafe">
+              <img src="assets/images/location-cafe-interior.webp" alt="Interior Kafe" loading="lazy">
+            </button>
+            <button class="showcase-thumb-btn" data-src="assets/images/story-arch-main.webp" aria-label="Lihat Ruang Barista">
+              <img src="assets/images/story-arch-main.webp" alt="Ruang Barista" loading="lazy">
+            </button>
+            <button class="showcase-thumb-btn" data-src="assets/images/gallery-our-space.webp" aria-label="Lihat Area Jendela">
+              <img src="assets/images/gallery-our-space.webp" alt="Area Jendela" loading="lazy">
+            </button>
+            <button class="showcase-thumb-btn" data-src="assets/images/story-corner-thumb.webp" aria-label="Lihat Sudut Tenang">
+              <img src="assets/images/story-corner-thumb.webp" alt="Sudut Tenang" loading="lazy">
+            </button>
+            <button class="showcase-next-arrow-btn" id="locationNextThumbBtn" aria-label="Foto Selanjutnya">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CALL TO ACTION BANNER (EXACT LUXURY MOCKUP FIDELITY)
+       ========================================================================== -->
+  <section class="cta-luxury-section">
+    <div class="container">
+      <div class="cta-banner-card">
+        <!-- Ambient Warm Glow Inside Banner -->
+        <div class="cta-banner-glow"></div>
+
+        <!-- Left Column: Arch Ambiance Photo with Cursive Script & Golden Arc -->
+        <div class="cta-arch-left">
+          <img src="assets/images/cta-cafe-ambiance.webp" alt="Sunlit cafe dining at Nana Cafe" class="cta-arch-img" loading="lazy">
+          <div class="cta-left-gradient"></div>
+          <!-- Cursive Script Watermark -->
+          <div class="cta-left-script">
+            <span>More ♡</span>
+            <span>Than</span>
+            <span>Just Coffee</span>
+          </div>
+          <!-- Sweeping Golden Arc Path -->
+          <svg class="cta-left-golden-arc" width="160" height="160" viewBox="0 0 160 160" fill="none">
+            <path d="M 0 160 C 20 80, 80 20, 160 0" stroke="#D1B48C" stroke-width="1.5" opacity="0.75" />
+          </svg>
+        </div>
+
+        <!-- Center Column: Tag, Headline with Sparkle, Subtitle, & Dual Action Buttons -->
+        <div class="cta-center-content">
+          <span class="cta-pre-tag">— BE PART OF OUR STORY —</span>
+          <h2 class="cta-main-headline">
+            Let's Create More<br>
+            <em>Beautiful Moments.</em>
+            <span class="cta-title-star">
+              <svg width="20" height="20" viewBox="0 0 100 100" fill="#B58D5A">
+                <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"/>
+              </svg>
+            </span>
+          </h2>
+          <p class="cta-sub-headline">
+            Good coffee, great company, and stories worth remembering.
+          </p>
+
+          <div class="cta-action-buttons">
+            <!-- Primary WhatsApp Dark Button -->
+            <a href="https://wa.me/6282221519098?text=Halo%20Nana%20Cafe%20Shop,%20saya%20ingin%20berkunjung%20dan%20tanya%20menu" target="_blank" rel="noopener" class="cta-btn-whatsapp">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.99.54 1.772.84 2.793.84 3.183 0 5.768-2.587 5.769-5.766.001-3.182-2.585-5.767-5.767-5.767zm7.509 5.765c-.001 4.14-3.367 7.507-7.509 7.507-1.31 0-2.544-.343-3.619-.942l-4.412 1.157 1.178-4.303c-.696-1.119-1.077-2.428-1.077-3.419 0-4.142 3.367-7.508 7.508-7.508 4.142 0 7.509 3.366 7.51 7.508z"/>
+              </svg>
+              <span>WhatsApp: 0822-2151-9098</span>
+            </a>
+
+            <!-- Secondary Instagram Light Button 1 -->
+            <a href="https://www.instagram.com/nana_cafeshop/" target="_blank" rel="noopener" class="cta-btn-instagram" title="Instagram: @nana_cafeshop">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span>@nana_cafeshop</span>
+            </a>
+
+            <!-- Secondary Instagram Light Button 2 -->
+            <a href="https://www.instagram.com/nanacafeshop_bkl/" target="_blank" rel="noopener" class="cta-btn-instagram" title="Instagram: @nanacafeshop_bkl">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span>@nanacafeshop_bkl</span>
+            </a>
+
+            <!-- TikTok Button -->
+            <a href="https://www.tiktok.com/@nanacafeshop" target="_blank" rel="noopener" class="cta-btn-instagram" title="TikTok: @nanacafeshop">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298 0 .594.045.88.134V9.4a6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 10.82 4.48c.038-.038.074-.077.11-.12.062-.07.12-.142.176-.217.067-.09.13-.183.187-.28a6.3 6.3 0 0 0 .8-3.08V8.92a8.27 8.27 0 0 0 4.89 1.57v-3.45a4.83 4.83 0 0 1-1.4-.35z"/>
+              </svg>
+              <span>TikTok @nanacafeshop</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Symmetrical Arch Photo of Latte on Book -->
+        <div class="cta-arch-right">
+          <img src="assets/images/cta-latte-book.webp" alt="Artisan Latte on Book at Nana Cafe" class="cta-arch-img" loading="lazy">
+          <!-- Sweeping Golden Arc Path -->
+          <svg class="cta-right-golden-arc" width="160" height="160" viewBox="0 0 160 160" fill="none">
+            <path d="M 160 160 C 140 80, 80 20, 0 0" stroke="#D1B48C" stroke-width="1.5" opacity="0.75" />
+          </svg>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       CALL TO ACTION BANNER
+       MODERN LUXURY FOOTER (MATCHING MOCKUP)
        ========================================================================== -->
-  <section class="cta-section">
+  <footer class="site-footer-luxury">
     <div class="container">
-      <div class="cta-tag">Be Part of Our Story</div>
-      <h2 class="cta-title">Let's Create More Beautiful Moments.</h2>
-      <div class="cta-buttons">
-        <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="btn btn-primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.99.54 1.772.84 2.793.84 3.183 0 5.768-2.587 5.769-5.766.001-3.182-2.585-5.767-5.767-5.767zm7.509 5.765c-.001 4.14-3.367 7.507-7.509 7.507-1.31 0-2.544-.343-3.619-.942l-4.412 1.157 1.178-4.303c-.696-1.119-1.077-2.428-1.077-3.419 0-4.142 3.367-7.508 7.508-7.508 4.142 0 7.509 3.366 7.51 7.508z"/>
-          </svg>
-          <span>Chat on WhatsApp</span>
+      <div class="footer-main-row">
+        <!-- Logo -->
+        <a href="#home" class="brand-logo footer-brand">
+          <span class="brand-title">NANA</span>
+          <span class="brand-subtitle">CAFE</span>
         </a>
 
-        <a href="https://instagram.com" target="_blank" rel="noopener" class="btn btn-secondary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-          </svg>
-          <span>Follow Instagram</span>
-        </a>
-      </div>
-    </div>
-  </section>
+        <!-- Navigation Links -->
+        <nav class="footer-center-nav">
+          <a href="#home" class="footer-nav-item">Home</a>
+          <a href="#menu" class="footer-nav-item">Menu</a>
+          <a href="#story" class="footer-nav-item">Our Story</a>
+          <a href="#gallery" class="footer-nav-item">Gallery</a>
+          <a href="#reviews" class="footer-nav-item">Reviews</a>
+          <a href="#location" class="footer-nav-item">Contact</a>
+        </nav>
 
-  <!-- ==========================================================================
-       FOOTER
-       ========================================================================== -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <a href="#home" class="brand-logo">
-          <span class="brand-title">ABYNS</span>
-          <span class="brand-subtitle">STUDIO</span>
-        </a>
-
-        <ul class="footer-nav">
-          <li><a href="#home" class="footer-link">Home</a></li>
-          <li><a href="#signature" class="footer-link">Menu</a></li>
-          <li><a href="#story" class="footer-link">Our Story</a></li>
-          <li><a href="#gallery" class="footer-link">Gallery</a></li>
-          <li><a href="#reviews" class="footer-link">Reviews</a></li>
-          <li><a href="#location" class="footer-link">Contact</a></li>
-        </ul>
-
-        <div class="footer-socials">
-          <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        <!-- Social Media Buttons -->
+        <div class="footer-social-icons">
+          <!-- Instagram 1: @nana_cafeshop -->
+          <a href="https://www.instagram.com/nana_cafeshop/" target="_blank" rel="noopener" class="footer-social-circle" aria-label="Instagram @nana_cafeshop" title="Instagram: @nana_cafeshop">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
           </a>
-          <a href="https://tiktok.com" target="_blank" rel="noopener" class="social-btn" aria-label="TikTok">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+
+          <!-- Instagram 2: @nanacafeshop_bkl -->
+          <a href="https://www.instagram.com/nanacafeshop_bkl/" target="_blank" rel="noopener" class="footer-social-circle footer-social-bkl" aria-label="Instagram @nanacafeshop_bkl" title="Instagram: @nanacafeshop_bkl (BKL)">
+            <span class="social-bkl-tag">BKL</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+
+          <!-- TikTok: @nanacafeshop -->
+          <a href="https://www.tiktok.com/@nanacafeshop" target="_blank" rel="noopener" class="footer-social-circle" aria-label="TikTok @nanacafeshop" title="TikTok: @nanacafeshop">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
               <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298 0 .594.045.88.134V9.4a6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 10.82 4.48c.038-.038.074-.077.11-.12.062-.07.12-.142.176-.217.067-.09.13-.183.187-.28a6.3 6.3 0 0 0 .8-3.08V8.92a8.27 8.27 0 0 0 4.89 1.57v-3.45a4.83 4.83 0 0 1-1.4-.35z"/>
             </svg>
           </a>
-          <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+
+          <!-- WhatsApp: 0822-2151-9098 -->
+          <a href="https://wa.me/6282221519098" target="_blank" rel="noopener" class="footer-social-circle" aria-label="WhatsApp" title="WhatsApp: 0822-2151-9098">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.99.54 1.772.84 2.793.84 3.183 0 5.768-2.587 5.769-5.766.001-3.182-2.585-5.767-5.767-5.767zm7.509 5.765c-.001 4.14-3.367 7.507-7.509 7.507-1.31 0-2.544-.343-3.619-.942l-4.412 1.157 1.178-4.303c-.696-1.119-1.077-2.428-1.077-3.419 0-4.142 3.367-7.508 7.508-7.508 4.142 0 7.509 3.366 7.51 7.508z"/>
             </svg>
           </a>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <div>&copy; 2026 ABYNS Studio. All rights reserved.</div>
-        <div class="footer-motto">Good Coffee, Brighter Days.</div>
+      <!-- Bottom Line -->
+      <div class="footer-bottom-row">
+        <div class="footer-copyright">© 2026 Nana Cafe. All rights reserved.</div>
+        <div class="footer-motto-script">Good Coffee, Brighter Days.</div>
       </div>
     </div>
   </footer>
@@ -556,7 +1689,12 @@
         </svg>
         Keranjang Pesanan
       </h3>
-      <button class="cart-close-btn" id="closeCartBtn" aria-label="Tutup Keranjang">&times;</button>
+      <button class="cart-close-btn" id="closeCartBtn" aria-label="Tutup Keranjang">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
     </div>
 
     <div class="cart-body">
@@ -568,7 +1706,15 @@
       <!-- Voucher Promo Section -->
       <div class="cart-promo-box">
         <div style="display:flex; justify-content:space-between; align-items:center;">
-          <span style="font-size:0.85rem; font-weight:700; color:var(--accent-espresso);">🎟️ Punya Kode Voucher?</span>
+          <span style="font-size:0.85rem; font-weight:700; color:var(--accent-espresso); display:inline-flex; align-items:center; gap:6px;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
+              <path d="M13 5v2"></path>
+              <path d="M13 17v2"></path>
+              <path d="M13 11v2"></path>
+            </svg>
+            Punya Kode Voucher?
+          </span>
           <span style="font-size:0.75rem; color:var(--accent-gold-dark);">Kode: HEAVEN15</span>
         </div>
         <div class="promo-input-group">
@@ -580,8 +1726,12 @@
 
       <!-- Customer Checkout Details -->
       <div class="cart-checkout-form">
-        <div class="form-title">
-          <span>📋 Data Pemesan</span>
+        <div class="form-title" style="display:flex; align-items:center; gap:8px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+            <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+          </svg>
+          <span>Data Pemesan</span>
         </div>
 
         <div class="form-group">
@@ -649,24 +1799,82 @@
   </div>
 
   <!-- ==========================================================================
-       FLOATING CART BUTTON (FOR QUICK ACCESS)
+       FLOATING ACTIONS: WHATSAPP & BACK TO TOP
        ========================================================================== -->
-  <button class="floating-cart-btn open-cart-btn" aria-label="Buka Keranjang" title="Lihat Keranjang Belanja">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-      <line x1="3" y1="6" x2="21" y2="6"></line>
-      <path d="M16 10a4 4 0 0 1-8 0"></path>
-    </svg>
-    <span class="cart-badge" id="floatingCartCount">0</span>
-  </button>
+  <div class="floating-actions-wrap" id="floatingActionsWrap">
+    <!-- Back to Top Button -->
+    <button class="floating-action-btn back-to-top-btn" id="backToTopBtn" aria-label="Kembali ke Atas" title="Kembali ke Atas">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6282221519098?text=Halo%20Nana%20Cafe%20Shop,%20saya%20ingin%20bertanya%20tentang%20menu%20dan%20reservasi." target="_blank" rel="noopener noreferrer" class="floating-action-btn floating-wa-btn" id="floatingWaBtn" aria-label="Hubungi via WhatsApp" title="Chat WhatsApp Nana Cafe Shop (0822-2151-9098)">
+      <div class="wa-pulse-ring"></div>
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+      </svg>
+    </a>
+  </div>
+
+    <!-- ==========================================================================
+       GALLERY LIGHTBOX MODAL (WITH SLIDER & CAPTION)
+       ========================================================================== -->
+  <div class="lightbox-modal" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Preview Galeri">
+    <div class="lightbox-backdrop" onclick="closeGalleryLightbox()"></div>
+    
+    <button class="lightbox-close" id="closeLightboxBtn" onclick="closeGalleryLightbox()" aria-label="Tutup Galeri">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <!-- Previous Arrow Button -->
+    <button class="lightbox-nav-btn lightbox-prev-btn" id="lightboxPrevBtn" onclick="navigateLightbox(-1)" aria-label="Foto Sebelumnya">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+
+    <div class="lightbox-content">
+      <div class="lightbox-media-wrap">
+        <img src="" alt="Gallery Preview" class="lightbox-img" id="lightboxImage">
+      </div>
+      <div class="lightbox-footer">
+        <div class="lightbox-info">
+          <div class="lightbox-script" id="lightboxScript">Our Space</div>
+          <div class="lightbox-desc" id="lightboxDesc">Sunlit architectural sanctuary designed for calm and conversation.</div>
+        </div>
+        <div class="lightbox-counter" id="lightboxCounter">1 / 5</div>
+      </div>
+    </div>
+
+    <!-- Next Arrow Button -->
+    <button class="lightbox-nav-btn lightbox-next-btn" id="lightboxNextBtn" onclick="navigateLightbox(1)" aria-label="Foto Selanjutnya">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+  </div>
 
   <!-- ==========================================================================
-       GALLERY LIGHTBOX MODAL
+       MENU ITEM DETAIL MODAL (LUXURY POPUP)
        ========================================================================== -->
-  <div class="lightbox-modal" id="galleryLightbox">
-    <button class="lightbox-close" id="closeLightboxBtn">&times;</button>
-    <div class="lightbox-content">
-      <img src="" alt="Gallery Preview" class="lightbox-img" id="lightboxImage">
+  <div class="menu-detail-modal" id="menuDetailModal" role="dialog" aria-modal="true" aria-labelledby="modalItemName">
+    <div class="menu-detail-backdrop" id="menuDetailBackdrop" onclick="closeMenuDetailModal()"></div>
+    <div class="menu-detail-dialog">
+      <button class="menu-detail-close-btn" id="closeDetailModalBtn" onclick="closeMenuDetailModal()" aria-label="Tutup Detail Menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="menu-detail-body" id="menuDetailModalContent">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
     </div>
   </div>
 
@@ -674,6 +1882,6 @@
   <div class="toast-container" id="toastContainer"></div>
 
   <!-- Main JavaScript File -->
-  <script src="js/app.js?v=20261014"></script>
+  <script src="js/app.js?v=20261014_webp_v1"></script>
 </body>
 </html>
