@@ -41,23 +41,35 @@ Website profil kafe dan pemesanan online modern berestetika mewah (*ethereal lux
 
 ---
 
-## 🚀 Panduan Upload ke GitHub Pages
+## 🚀 Panduan Upload ke GitHub Pages & Custom Domain
 
-1. Buat repositori baru di GitHub (contoh: `nana-cafe`).
-2. Buka terminal di folder project ini:
+1. Buka terminal di folder project ini:
    ```bash
    git init
    git add .
-   git commit -m "Initial commit - Nana Cafe"
+   git commit -m "Initial commit - Nana Cafe SEO Ready"
    git branch -M main
-   git remote add origin https://github.com/USERNAME_ANDA/nana-cafe.git
+   git remote add origin https://github.com/hisyamabilkhoir/company-profile-mini-cafe.git
    git push -u origin main
    ```
-3. Buka tab **Settings** di repositori GitHub Anda.
-4. Klik menu **Pages** di sebelah kiri.
-5. Pada bagian **Build and deployment** > **Source**, pilih **Deploy from a branch**.
-6. Pilih branch `main` dan folder `/ (root)`, lalu klik **Save**.
-7. Website Anda akan langsung aktif dalam hitungan menit di `https://USERNAME_ANDA.github.io/nana-cafe/`!
+2. Buka repositori di GitHub: `https://github.com/hisyamabilkhoir/company-profile-mini-cafe`.
+3. Buka tab **Settings** > **Pages** di sebelah kiri.
+4. Pada bagian **Build and deployment** > **Source**, pilih **Deploy from a branch** (`branch: main`, `folder: / (root)`), lalu klik **Save**.
+5. Pada bagian **Custom domain**:
+   - Ketikkan: `nanacafeshop.web.id`
+   - Klik **Save** (File `CNAME` sudah otomatis tersedia di project ini).
+   - Centang **Enforce HTTPS** setelah sertifikat SSL aktif.
+
+### 🌐 Konfigurasi DNS di Registrar Domain (nanacafeshop.web.id):
+Tambahkan DNS Record berikut pada dashboard penyedia domain Anda:
+- **A Record**:
+  - `185.199.108.153`
+  - `185.199.109.153`
+  - `185.199.110.153`
+  - `185.199.111.153`
+- **CNAME Record**:
+  - Host: `www`
+  - Target: `hisyamabilkhoir.github.io`
 
 ---
 
@@ -68,9 +80,45 @@ Untuk mengganti nomor WhatsApp tujuan pemesanan kafe, buka file [`js/app.js`](fi
 ```javascript
 const CAFE_CONFIG = {
   name: "NANA CAFE",
-  whatsappNumber: "6282221519098", // Ganti dengan nomor WhatsApp Kafe Anda (format: 628xxx tanpa tanda +)
+  whatsappNumber: "6282221519098", // 0822-2151-9098
   currencySymbol: "Rp",
   ...
 };
 ```
+
+---
+
+## 🔍 Panduan Mendaftarkan Website ke Google Search Console
+
+Website ini telah disetting menggunakan **Primary Domain Canonical**: `https://nanacafeshop.web.id/` (dengan auto-redirect dari `hisyamabilkhoir.github.io`).
+
+### Langkah-Langkah Verifikasi Google Search Console:
+
+1. **Buka Google Search Console**:
+   - Masuk ke [Google Search Console](https://search.google.com/search-console/) dengan akun Google Anda.
+
+2. **Tambahkan Properti**:
+   - Pilih jenis properti **Awalan URL (URL Prefix)**.
+   - Masukkan alamat website Anda: `https://nanacafeshop.web.id/` (bisa juga tambahkan properti kedua untuk `https://hisyamabilkhoir.github.io/company-profile-mini-cafe/`).
+   - Klik **Lanjutkan**.
+
+3. **Pilih Metode Verifikasi "Tag HTML"**:
+   - Pada pilihan metode verifikasi, buka opsi **Tag HTML**.
+   - Salin kode tag meta yang diberikan oleh Google, contoh:
+     `<meta name="google-site-verification" content="abcdef123456xyz..." />`
+   - Buka file [`index.html`](file:///c:/xampp/htdocs/abynsstudio/company-profile-mini-cafe/index.html) dan cari baris berikut:
+     ```html
+     <meta name="google-site-verification" content="MASUKKAN_KODE_VERIFIKASI_GOOGLE_CONSOLE_DI_SINI">
+     ```
+   - Ganti `MASUKKAN_KODE_VERIFIKASI_GOOGLE_CONSOLE_DI_SINI` dengan kode dari Google tersebut.
+   - Simpan dan commit ke GitHub (`git add . && git commit -m "Add GSC verification code" && git push`).
+   - Kembali ke Google Search Console dan klik tombol **Verifikasi**.
+
+4. **Kirimkan Peta Situs (Sitemap)**:
+   - Setelah terverifikasi, klik menu **Peta Situs (Sitemaps)** di sidebar kiri Google Search Console.
+   - Pada kolom *Tambahkan peta situs baru*, ketik: `sitemap.xml`.
+   - Klik **Kirim**.
+   - Google akan segera mulai merayapi (*crawling*) dan mengindeks seluruh halaman serta foto produk menu kafe Anda.
+
+
 

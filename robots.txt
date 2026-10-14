@@ -1,0 +1,8 @@
+# robots.txt for Nana Cafe (nanacafeshop.web.id & hisyamabilkhoir.github.io)
+# Allow search engine crawlers to crawl all public resources
+
+User-agent: *
+Allow: /
+
+# Sitemap location for Google Search Console & Bing Webmaster Tools
+Sitemap: https://nanacafeshop.web.id/sitemap.xml

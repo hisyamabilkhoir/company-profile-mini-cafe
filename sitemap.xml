@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Halaman Utama (Beranda nanacafeshop.web.id) -->
+  <url>
+    <loc>https://nanacafeshop.web.id/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    
+    <!-- Gambar Ambiance & Interior Kafe untuk Google Images -->
+    <image:image>
+      <image:loc>https://nanacafeshop.web.id/assets/images/story-arch-main.webp</image:loc>
+      <image:title>Nana Cafe Interior &amp; Coffee Bar</image:title>
+      <image:caption>Suasana estetis dan nyaman di Nana Cafe Senopati Jakarta Selatan</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://nanacafeshop.web.id/assets/images/story/cozy-pastel-cafe-counter.webp</image:loc>
+      <image:title>Barista Counter Nana Cafe</image:title>
+      <image:caption>Ruang barista dan etalase kue artisan di Nana Cafe</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://nanacafeshop.web.id/assets/images/location-cafe-interior.webp</image:loc>
+      <image:title>Area Duduk &amp; Tempat Nongkrong Nana Cafe</image:title>
+      <image:caption>Area bersantai yang tenang dan sejuk di Jl. Senopati No. 45</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://nanacafeshop.web.id/assets/images/cloud-latte.webp</image:loc>
+      <image:title>Cloud Latte Specialty Nana Cafe</image:title>
+      <image:caption>Signature Cloud Latte dengan busa vanilla lembut</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://nanacafeshop.web.id/assets/images/heavenly-matcha.webp</image:loc>
+      <image:title>Heavenly Matcha Latte</image:title>
+      <image:caption>Matcha premium Uji dengan susu segar pilihan di Nana Cafe</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://nanacafeshop.web.id/assets/images/moon-croissant.webp</image:loc>
+      <image:title>Artisan Moon Croissant</image:title>
+      <image:caption>Pastry renyah dan butter Prancis harum</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Bagian Menu Kafe -->
+  <url>
+    <loc>https://nanacafeshop.web.id/#menu</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Bagian Signature Items -->
+  <url>
+    <loc>https://nanacafeshop.web.id/#signature</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Bagian Cerita Kafe (Our Story) -->
+  <url>
+    <loc>https://nanacafeshop.web.id/#story</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Bagian Galeri Estetis -->
+  <url>
+    <loc>https://nanacafeshop.web.id/#gallery</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Bagian Ulasan Pelanggan -->
+  <url>
+    <loc>https://nanacafeshop.web.id/#reviews</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Bagian Lokasi & Jam Operasional -->
+  <url>
+    <loc>https://nanacafeshop.web.id/#location</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>
