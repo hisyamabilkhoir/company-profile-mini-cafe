@@ -777,6 +777,7 @@ function formatRupiah(number) {
 
 // Initialize on DOM Ready
 document.addEventListener("DOMContentLoaded", () => {
+  initCafePreloader();
   loadCartFromStorage();
   initNavbar();
   initHeroVideo();
@@ -798,6 +799,83 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ==========================================================================
+   CUTE CAFE PRELOADER LOGIC
+   ========================================================================== */
+function initCafePreloader() {
+  const preloader = document.getElementById("cafePreloader");
+  if (!preloader) return;
+
+  const progressBar = document.getElementById("preloaderProgressBar");
+  const counterVal = document.getElementById("preloaderCounter");
+  const sloganElem = document.getElementById("preloaderSlogan");
+
+  const cuteSlogans = [
+    "Menyeduh kehangatan untuk harimu...",
+    "Aroma kopi pilihan menantimu...",
+    "Sedikit keajaiban manis untukmu...",
+    "Mempersiapkan sanctuary santai terbaikmu...",
+    "Handcrafted with love, just for you..."
+  ];
+
+  // Pick cute random slogan
+  if (sloganElem) {
+    const randomSlogan = cuteSlogans[Math.floor(Math.random() * cuteSlogans.length)];
+    sloganElem.innerHTML = randomSlogan.replace("...", '<span class="p-dots">...</span>');
+  }
+
+  // Smooth brewing progress simulation
+  let currentProgress = 15;
+  const startTime = Date.now();
+  const minDisplayTime = 1100; // ensures the cute animation is seen on fast refresh
+  let isDone = false;
+
+  const progressInterval = setInterval(() => {
+    if (isDone) return;
+    if (currentProgress < 88) {
+      currentProgress += Math.floor(Math.random() * 6) + 3;
+      if (currentProgress > 88) currentProgress = 88;
+      if (progressBar) progressBar.style.width = currentProgress + "%";
+      if (counterVal) counterVal.textContent = currentProgress + "%";
+    }
+  }, 70);
+
+  function dismissPreloader() {
+    if (isDone) return;
+    isDone = true;
+    clearInterval(progressInterval);
+
+    const elapsed = Date.now() - startTime;
+    const remainingTime = Math.max(0, minDisplayTime - elapsed);
+
+    setTimeout(() => {
+      // Advance smoothly to 100%
+      if (progressBar) progressBar.style.width = "100%";
+      if (counterVal) counterVal.textContent = "100%";
+
+      // Trigger celebratory loaded class
+      setTimeout(() => {
+        preloader.classList.add("loaded");
+        document.body.classList.add("page-ready");
+
+        // Clean up display after exit animation completes
+        setTimeout(() => {
+          preloader.style.display = "none";
+        }, 700);
+      }, 350);
+    }, remainingTime);
+  }
+
+  // Listen for window complete load
+  if (document.readyState === "complete") {
+    dismissPreloader();
+  } else {
+    window.addEventListener("load", dismissPreloader);
+    // Safety fallback timeout: maximum 3.2s
+    setTimeout(dismissPreloader, 3200);
+  }
+}
+
+/* ==========================================================================
    NAVBAR & MOBILE MENU
    ========================================================================== */
 function initNavbar() {
@@ -805,6 +883,22 @@ function initNavbar() {
   const mobileToggle = document.querySelector(".mobile-menu-toggle");
   const navMenu = document.querySelector(".nav-menu");
   const navLinks = document.querySelectorAll(".nav-link");
+  const closeNavBtn = document.getElementById("closeNavBtn");
+  const navBackdrop = document.getElementById("navBackdrop");
+
+  function openMenu() {
+    navMenu.classList.add("open");
+    if (navBackdrop) navBackdrop.classList.add("active");
+    if (mobileToggle) mobileToggle.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMenu() {
+    navMenu.classList.remove("open");
+    if (navBackdrop) navBackdrop.classList.remove("active");
+    if (mobileToggle) mobileToggle.classList.remove("active");
+    document.body.style.overflow = "";
+  }
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 40) {
@@ -816,15 +910,25 @@ function initNavbar() {
 
   if (mobileToggle) {
     mobileToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("open");
+      if (navMenu.classList.contains("open")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
+  }
+
+  if (closeNavBtn) {
+    closeNavBtn.addEventListener("click", closeMenu);
+  }
+
+  if (navBackdrop) {
+    navBackdrop.addEventListener("click", closeMenu);
   }
 
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
-      if (navMenu.classList.contains("open")) {
-        navMenu.classList.remove("open");
-      }
+      closeMenu();
     });
   });
 }
