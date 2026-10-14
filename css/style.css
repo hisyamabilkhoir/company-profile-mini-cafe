@@ -5098,10 +5098,19 @@ input, textarea, select {
 
 /* Center Title & Subtitle */
 .location-title-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   max-width: 650px;
   margin: 0 auto;
   z-index: 2;
+}
+
+.location-pre-tag-wrap {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 8px;
 }
 
 .location-pre-tag {
@@ -5111,7 +5120,6 @@ input, textarea, select {
   font-weight: 700;
   letter-spacing: 0.28em;
   color: #9C7A54;
-  margin-bottom: 12px;
 }
 
 .location-main-title {

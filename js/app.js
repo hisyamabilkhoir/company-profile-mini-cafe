@@ -5,7 +5,7 @@
 
 // Cafe Configuration
 const CAFE_CONFIG = {
-  name: "NANA CAFE",
+  name: "NANA CAFESHOP",
   whatsappNumber: "6282221519098", // 0822-2151-9098
   whatsappDisplay: "0822-2151-9098",
   instagramPrimary: "https://www.instagram.com/nana_cafeshop/",
@@ -394,29 +394,27 @@ const MENU_ITEMS = [
   },
   {
     id: "choco-strawberry",
-    name: "ChocoStrawBerry",
-    category: "non-coffee",
+    name: "Choco StrawBerry",
+    category: "dessert",
     price: 36000,
     oldPrice: 40000,
     image: "assets/images/menu/choco-strawberry.webp",
     badge: "SIGNATURE DESSERT",
     badgeType: "crown",
-    scriptAccent: "Indulgent Duo",
-    desc: "ChocoStrawBerry mempertemukan cita rasa cokelat kaya dengan kesegaran stroberi dalam satu minuman dessert yang memanjakan. Perpaduan manis cokelat dan sedikit asam khas stroberi menghasilkan kontras rasa memikat.",
-    shortDesc: "Perpaduan mewah cokelat pekat dan kesegaran stroberi dalam sajian dessert drink.",
+    scriptAccent: "Extra Happiness",
+    desc: "Perpaduan stroberi utuh yang segar dengan lelehan cokelat yang kaya rasa. Kombinasi manis, fruity, dan cokelat yang memanjakan dalam setiap gigitan.",
+    shortDesc: "Perpaduan stroberi utuh segar dengan lelehan cokelat kaya rasa yang memanjakan.",
     ingredients: [
-      { name: "Saus Cokelat", icon: "espresso" },
-      { name: "Buah Stroberi", icon: "berry" },
-      { name: "Susu Segar", icon: "milk" },
-      { name: "Krim Kocok", icon: "cloud" }
+      { name: "Stroberi Utuh", icon: "berry" },
+      { name: "Lelehan Cokelat", icon: "espresso" }
     ],
     flavorNotes: [
-      { name: "Manis Cokelat", icon: "espresso" },
-      { name: "Asam Segar", icon: "berry" },
-      { name: "Creamy Rich", icon: "cloud" },
-      { name: "Berlapis Mewah", icon: "sparkle" }
+      { name: "Manis dan Segar", icon: "sparkle" },
+      { name: "Rich Chocolate", icon: "espresso" },
+      { name: "Fruity", icon: "berry" },
+      { name: "Memanjakan", icon: "cloud" }
     ],
-    servings: ["Iced"]
+    servings: ["Chilled", "Standard"]
   },
   {
     id: "hojicha-latte",
@@ -713,20 +711,29 @@ const MENU_ITEMS = [
     image: "assets/images/menu/banana-nugget.webp",
     badge: "CRISPY SNACK",
     badgeType: "crown",
-    scriptAccent: "Golden Crispy",
-    desc: "Banana Nugget adalah camilan berbahan dasar pisang manis yang dibalut lapisan renyah lalu digoreng hingga keemasan. Bagian luar terasa garing gurih, sedangkan bagian dalamnya tetap lembut dan legit.",
-    shortDesc: "Potongan pisang manis berbalut tepung renyah keemasan dengan topping lumer nikmat.",
+    scriptAccent: "Golden Crunch",
+    desc: "Nikmati camilan pisang dengan balutan kulit lumpia yang tipis dan renyah, digoreng hingga keemasan dengan bagian dalam yang tetap lembut. Semakin istimewa dengan pilihan glaze Collins warna-warni yang menghadirkan beragam rasa manis dan lezat di setiap gigitan.",
+    shortDesc: "Pisang berbalut kulit lumpia tipis renyah keemasan dengan aneka pilihan glaze Collins warna-warni.",
     ingredients: [
       { name: "Pisang Pilihan", icon: "croissant" },
-      { name: "Tepung Panir", icon: "wheat" },
-      { name: "Cokelat Leleh", icon: "espresso" },
-      { name: "Keju Parut", icon: "sparkle" }
+      { name: "Kulit Lumpia", icon: "wheat" },
+      { name: "Minyak Goreng", icon: "drop" },
+      { name: "Glaze Collins", icon: "sparkle" }
+    ],
+    toppings: [
+      { name: "Matcha", icon: "🍵" },
+      { name: "Stroberi", icon: "🍓" },
+      { name: "Cokelat", icon: "🍫" },
+      { name: "Blueberry", icon: "🫐" },
+      { name: "Tiramisu", icon: "☕" },
+      { name: "Taro", icon: "💜" }
     ],
     flavorNotes: [
-      { name: "Manis Pisang", icon: "honey" },
+      { name: "Manis Alami Pisang", icon: "honey" },
       { name: "Renyah di Luar", icon: "wheat" },
       { name: "Lembut di Dalam", icon: "cloud" },
-      { name: "Gurih Manis", icon: "sparkle" }
+      { name: "Glaze Warna-Warni", icon: "sparkle" },
+      { name: "Pilihan Rasa Beragam", icon: "berry" }
     ],
     servings: ["Warm", "Standard"]
   },
@@ -1125,7 +1132,7 @@ function initHeroVideo() {
         soundBtn.setAttribute("title", "Matikan Suara");
         if (soundIcon) soundIcon.innerHTML = SOUND_ICONS.playing;
 
-        showToast("Suara diaktifkan — Suasana santai Nana Cafe");
+        showToast("Suara diaktifkan — Suasana santai Nana Cafeshop");
       } else {
         if (cafeAudioEngine) {
           cafeAudioEngine.stop();
@@ -1805,6 +1812,21 @@ function initPreviewPanel(item) {
       </div>
     </div>
 
+    <!-- Section: PILIHAN TOPPING GLAZE -->
+    ${item.toppings && item.toppings.length > 0 ? `
+      <div class="preview-block">
+        <div class="preview-section-title">PILIHAN TOPPING GLAZE</div>
+        <div class="preview-flavor-pills">
+          ${item.toppings.map(t => `
+            <div class="flavor-pill">
+              <span class="flavor-icon" style="font-size:1.05rem;">${t.icon}</span>
+              <span class="flavor-name">${t.name}</span>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+    ` : ''}
+
     <!-- Section: FLAVOR NOTES -->
     <div class="preview-block">
       <div class="preview-section-title">FLAVOR NOTES</div>
@@ -2104,6 +2126,16 @@ function openMenuDetailModal(itemId) {
           </div>
         ` : ''}
 
+        <!-- Pilihan Topping Glaze (jika ada) -->
+        ${item.toppings && item.toppings.length > 0 ? `
+          <div class="modal-section-group">
+            <div class="modal-section-label">Pilihan Topping Glaze</div>
+            <div class="modal-tags-list">
+              ${item.toppings.map(t => `<span class="modal-tag-chip"><span style="font-size:1.05rem;">${t.icon}</span> <span>${t.name}</span></span>`).join("")}
+            </div>
+          </div>
+        ` : ''}
+
         <!-- Profil Rasa / Flavor Notes -->
         ${item.flavorNotes && item.flavorNotes.length > 0 ? `
           <div class="modal-section-group">
@@ -2331,7 +2363,7 @@ function updateCartUI() {
           </svg>
         </div>
         <h4>Keranjang Belanja Kosong</h4>
-        <p style="font-size:0.85rem; margin-top:6px;">Silakan pilih menu favorit Anda dan nikmati momen ajaib di Nana Cafe.</p>
+        <p style="font-size:0.85rem; margin-top:6px;">Silakan pilih menu favorit Anda dan nikmati momen ajaib di Nana Cafeshop.</p>
       </div>
     `;
     if (subtotalDisplay) subtotalDisplay.innerText = formatRupiah(0);
@@ -2652,7 +2684,7 @@ const GALLERY_ITEMS = [
     id: "more-photos",
     title: "More Moments",
     script: "+12",
-    desc: "Explore more captured memories and daily scenes at Nana Cafe.",
+    desc: "Explore more captured memories and daily scenes at Nana Cafeshop.",
     image: "assets/images/gallery-our-space.webp",
     isMoreCard: true
   }
@@ -3189,7 +3221,7 @@ function resetMapPosition() {
   mapPanX = 0;
   mapPanY = 0;
   updateMapTransform(true);
-  showToast("✦ Dipusatkan ke Nana Cafe (Jl. Senopati No. 45)");
+  showToast("✦ Dipusatkan ke Nana Cafeshop (Jl. Senopati No. 45)");
 }
 
 function initInteractiveMap() {
