@@ -7,5 +7,19 @@
   "background_color": "#FDFBF7",
   "theme_color": "#8C6641",
   "lang": "id",
-  "categories": ["food", "lifestyle", "shopping"]
+  "categories": ["food", "lifestyle", "shopping"],
+  "icons": [
+    {
+      "src": "assets/images/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
 }

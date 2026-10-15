@@ -5,9 +5,16 @@
   <!-- Halaman Utama (Beranda nanacafeshop.web.id) -->
   <url>
     <loc>https://nanacafeshop.web.id/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    
+    <!-- Official Brand Logo Nana Cafe -->
+    <image:image>
+      <image:loc>https://nanacafeshop.web.id/assets/images/logo.png</image:loc>
+      <image:title>Logo Resmi Nana Cafeshop</image:title>
+      <image:caption>Logo resmi Nana Cafeshop sunflower badge estetik</image:caption>
+    </image:image>
     
     <!-- Gambar Ambiance & Interior Kafe untuk Google Images -->
     <image:image>

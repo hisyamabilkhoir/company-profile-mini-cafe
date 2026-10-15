@@ -69,6 +69,7 @@
     "alternateName": "Nana Cafe",
     "description": "A cozy sanctuary cafe for dreamers in Senopati, Jakarta Selatan. Handcrafted specialty coffee, artisan matcha, teas, and fresh pastries.",
     "url": "https://nanacafeshop.web.id/",
+    "logo": "https://nanacafeshop.web.id/assets/images/logo.png",
     "telephone": "+6282221519098",
     "priceRange": "Rp 20.000 - Rp 50.000",
     "servesCuisine": [
@@ -147,7 +148,13 @@
     "inLanguage": "id-ID",
     "description": "Website resmi Nana Cafeshop - Profil kafe, katalog menu spesial, galeri foto estetika, dan pemesanan WhatsApp.",
     "publisher": {
-      "@id": "https://nanacafeshop.web.id/#cafe"
+      "@type": "Organization",
+      "@id": "https://nanacafeshop.web.id/#cafe",
+      "name": "Nana Cafeshop",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://nanacafeshop.web.id/assets/images/logo.png"
+      }
     }
   }
   </script>
@@ -160,8 +167,13 @@
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css?v=20261014_webp_v1">
 
-  <!-- Favicon & Web App Manifest -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C5A880' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M18 8h1a4 4 0 0 1 0 8h-1'></path><path d='M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z'></path><line x1='6' y1='1' x2='6' y2='4'></line><line x1='10' y1='1' x2='10' y2='4'></line><line x1='14' y1='1' x2='14' y2='4'></line></svg>">
+  <!-- Favicon & Web App Manifest (Google Search & Browser Tab Icons) -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/images/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
