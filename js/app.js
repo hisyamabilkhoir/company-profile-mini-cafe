@@ -3221,7 +3221,7 @@ function resetMapPosition() {
   mapPanX = 0;
   mapPanY = 0;
   updateMapTransform(true);
-  showToast("✦ Dipusatkan ke Nana Cafeshop (Jl. Senopati No. 45)");
+  showToast("✦ Dipusatkan ke Nana Cafeshop (Jl. K.H. Zainal Alim IA/3 Bangkalan)");
 }
 
 function initInteractiveMap() {
