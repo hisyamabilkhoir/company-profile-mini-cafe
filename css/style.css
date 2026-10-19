@@ -5293,6 +5293,32 @@ input, textarea, select {
   font-weight: 700;
 }
 
+.loc-hours-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 3px;
+}
+
+.loc-hours-item {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.35;
+}
+
+.loc-hours-day {
+  font-size: 0.78rem;
+  color: #7A695A;
+  font-weight: 500;
+}
+
+.loc-hours-time {
+  font-size: 0.82rem;
+  color: #2F2015;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
 .loc-item-arrow {
   width: 28px;
   height: 28px;

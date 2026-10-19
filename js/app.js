@@ -12,6 +12,10 @@ const CAFE_CONFIG = {
   instagramBranch: "https://www.instagram.com/nanacafeshop_bkl/",
   tiktok: "https://www.tiktok.com/@nanacafeshop",
   currencySymbol: "Rp",
+  openingHours: {
+    weekday: "Senin s/d Kamis: 17.00 — 20.00 WIB",
+    weekend: "Jumat s/d Minggu: 15.00 — 18.00 WIB"
+  },
   discounts: {
     "HEAVEN15": { type: "percent", value: 15, label: "Diskon 15% Spesial Pembukaan" },
     "NANAMAGIC": { type: "percent", value: 20, label: "Magic Discount 20%" },
